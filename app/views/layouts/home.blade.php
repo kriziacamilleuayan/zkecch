@@ -132,8 +132,8 @@
                 </div>
                 <div class="Portfolio-box webdesign">
                 	<a href="#"><img src="img/Portfolio-pic2.jpg" alt=""></a>	
-                	<h3>Luca Theme</h3>
-                    <p>Web Design</p>
+                	<h3>land that can scape</h3>
+                    <p>Landscape</p>
                 </div>
                 <div class=" Portfolio-box branding">
                 	<a href="#"><img src="img/Portfolio-pic3.jpg" alt="" style="height: 360px, width: 270px"></a>	
@@ -159,35 +159,6 @@
 </section><!--main-section-end-->
 
 
-<section class="main-section client-part" id="client"><!--main-section client-part-start-->
-	<div class="container">
-		<b class="quote-right wow fadeInDown delay-03"><i class="fa-quote-right"></i></b>
-    	<div class="row">
-        	<div class="col-lg-12">
-            	<p class="client-part-haead wow fadeInDown delay-05">It was a pleasure to work with the guys at Knight Studio. They made sure 
-we were well fed and drunk all the time!</p>
-            </div>
-        </div>
-    	<ul class="client wow fadeIn delay-05s">
-        	<li><a href="#">
-            	<img src="img/client-pic1.jpg" alt="">
-                <h3>James Bond</h3>
-                <span>License To Drink Inc.</span>
-            </a></li>
-        </ul>
-    </div>
-</section><!--main-section client-part-end-->
-<div class="c-logo-part"><!--c-logo-part-start-->
-	<div class="container">
-    	<ul>
-        	<li><a href="#"><img src="img/c-liogo1.png" alt=""></a></li>
-            <li><a href="#"><img src="img/c-liogo2.png" alt=""></a></li>
-            <li><a href="#"><img src="img/c-liogo3.png" alt=""></a></li>
-            <li><a href="#"><img src="img/c-liogo4.png" alt=""></a></li>
-            <li><a href="#"><img src="img/c-liogo5.png" alt=""></a></li>
-    	</ul>
-	</div>
-</div><!--c-logo-part-end-->
 <section class="main-section team" id="team"><!--main-section team-start-->
 	<div class="container">
         <h2>team</h2>
@@ -197,46 +168,63 @@ we were well fed and drunk all the time!</p>
                 <div class="team-leader wow fadeInDown delay-03s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic1.jpg" alt="">
-                    <ul>
-                        <li><a href="#" class="fa-twitter"></a></li>
-                        <li><a href="#" class="fa-facebook"></a></li>
-                        <li><a href="#" class="fa-pinterest"></a></li>
-                        <li><a href="#" class="fa-google-plus"></a></li>
-                    </ul>
+                    
                 </div>
-                <h3 class="wow fadeInDown delay-03s">Walter White</h3>
-                <span class="wow fadeInDown delay-03s">Chief Executive Officer</span>
-                <p class="wow fadeInDown delay-03s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+                <h3 class="wow fadeInDown delay-03s">Erik Jon del Castillo</h3>
+                <span class="wow fadeInDown delay-03s">Project Manager</span>
+                <p class="wow fadeInDown delay-03s">Erik is a third year IT student who does nothing but KPOP. He has a talent in designing but hardly makes it in use. And he is the leader of the group.</p>
             </div>
             <div class="team-leader-box">
                 <div class="team-leader  wow fadeInDown delay-06s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic2.jpg" alt="">
-                    <ul>
-                        <li><a href="#" class="fa-twitter"></a></li>
-                        <li><a href="#" class="fa-facebook"></a></li>
-                        <li><a href="#" class="fa-pinterest"></a></li>
-                        <li><a href="#" class="fa-google-plus"></a></li>
-                    </ul>
+                    
                 </div>
-                <h3 class="wow fadeInDown delay-06s">Jesse Pinkman</h3>
-                <span class="wow fadeInDown delay-06s">Product Manager</span>
-                <p class="wow fadeInDown delay-06s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+                <h3 class="wow fadeInDown delay-06s">Camille Escobar</h3>
+                <span class="wow fadeInDown delay-06s">Lead Programmer</span>
+                <p class="wow fadeInDown delay-06s">Camille is the face of the group. She is good in web programming, as well, with PHP as the language of use. Reading is her hobby. She can read a 7-book series in two days!</p>
             </div>
             <div class="team-leader-box">
                 <div class="team-leader wow fadeInDown delay-09s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic3.jpg" alt="">
-                    <ul>
-                        <li><a href="#" class="fa-twitter"></a></li>
-                        <li><a href="#" class="fa-facebook"></a></li>
-                        <li><a href="#" class="fa-pinterest"></a></li>
-                        <li><a href="#" class="fa-google-plus"></a></li>
-                    </ul>
+                    
                 </div>
-                <h3 class="wow fadeInDown delay-09s">Skyler white</h3>
-                <span class="wow fadeInDown delay-09s">Accountant</span>
-                <p class="wow fadeInDown delay-09s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.</p>
+                <h3 class="wow fadeInDown delay-09s">Honey May Buenavides</h3>
+                <span class="wow fadeInDown delay-09s">Senior Developer</span>
+                <p class="wow fadeInDown delay-09s">Honey does most of the work. She loves to write, not codes but actual literary pieces. She loves It Started With A Kiss, and Conrad. She wants to be a novelist someday.</p>
+            </div>
+        </div><br><br><br>
+        <div class="team-leader-block clearfix">
+            <div class="team-leader-box">
+                <div class="team-leader wow fadeInDown delay-03s"> 
+                    <div class="team-leader-shadow"><a href="#"></a></div>
+                    <img src="img/team-leader-pic4.jpg" alt="">
+                    
+                </div>
+                <h3 class="wow fadeInDown delay-03s">Zylah Mae Cuerpo</h3>
+                <span class="wow fadeInDown delay-03s">Systems Analyst</span>
+                <p class="wow fadeInDown delay-03s">Zylah also loves KPOP like the leader. She is good in database. She loves reading pocketbooks. She is a good dancer, too. You should see her dance to the beat sometimes. </p>
+            </div>
+            <div class="team-leader-box">
+                <div class="team-leader  wow fadeInDown delay-06s"> 
+                    <div class="team-leader-shadow"><a href="#"></a></div>
+                    <img src="img/team-leader-pic5.jpg" alt="">
+                    
+                </div>
+                <h3 class="wow fadeInDown delay-06s">Cassandra de Asis</h3>
+                <span class="wow fadeInDown delay-06s">Database Administrator</span>
+                <p class="wow fadeInDown delay-06s">Cassandra is quite good in designing too. She is fun to hang around with. She works better than those I-have-a-lot-of-excuses-so-I-cant-get-it-done dudes. She's sweet.</p>
+            </div>
+            <div class="team-leader-box">
+                <div class="team-leader wow fadeInDown delay-09s"> 
+                    <div class="team-leader-shadow"><a href="#"></a></div>
+                    <img src="img/team-leader-pic6.jpg" alt="">
+                    
+                </div>
+                <h3 class="wow fadeInDown delay-09s">Krizia Camille Uayan</h3>
+                <span class="wow fadeInDown delay-09s">Junior Developer</span>
+                <p class="wow fadeInDown delay-09s">Krizia is a bitch. She does only a quarter of her job and leaves the rest for Honey to do. She is evil. She loves to pick on innocent people especially Honey, who is really nice and sweet.</p>
             </div>
         </div>
     </div>

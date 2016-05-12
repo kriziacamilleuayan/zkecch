@@ -37,21 +37,6 @@
 
 </head>
 <body>
-<div style="overflow:hidden;">
-<header class="header" id="header"><!--header-start-->
-	<div class="container">
-    	<figure class="logo animated fadeInDown delay-07s">
-        	<a href="#"><img src="img/logo.png" alt=""></a>	
-        </figure>	
-        <h1 class="animated fadeInDown delay-07s">Welcome To Zkecch Co.</h1>
-        <ul class="we-create animated fadeInUp delay-1s">
-        	<li>I hate you. Yes, we hate you.</li>
-        </ul>
-            <a class="link animated fadeInUp delay-1s" href="#">Log-in</a>
-    </div>
-</div>
-</header><!--header-end-->
-
 
 <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
@@ -73,13 +58,13 @@
 <section class="main-section" id="service"><!--main-section-start-->
 	<div class="container">
     	<h2>Services</h2>
-    	<h6>Your art can make millions.</h6>
+    	<h6>Earn big while inspiring others with your art.</h6>
         <div class="row">
         	<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
             	<div class="service-list">
                 	<div class="service-list-col2">
                         <h3>Sharing Art</h3>
-                        <p>Sharing art.</p>
+                        <p>.</p>
                     </div>
                 </div>
                 <div class="service-list">
@@ -288,6 +273,10 @@
         You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Knight
     -->
 </footer>
+
+    <main>
+        @yield('content')
+      </main>
 
 
 <script type="text/javascript">

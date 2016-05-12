@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('layouts.home');
-});
+Route::get('/', 'HomeController@showWelcome');
+Route::post('/login', 'HomeController@LogIn');

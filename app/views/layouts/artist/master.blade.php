@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
 
-<title>Homepage</title>
+<title>@yield('title')</title>
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
 
@@ -43,7 +43,7 @@
 	<div class="container">
         <ul class="main-nav">
         	<li><a href="{{URL::to('artist-profile')}}">Krizia(artist)</a></li>
-            <li><a href="#service">Home</a></li>
+            <li><a href="{{URL::to('artist-home')}}">Home</a></li>
             <li><a href="#Portfolio">Artworks</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="#team">Orders</a></li>

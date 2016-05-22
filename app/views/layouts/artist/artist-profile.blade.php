@@ -1,7 +1,7 @@
 @extends('layouts.artist.master')
 
 @section('title')
-Welcome
+Profile
 @endsection
 
 @section('content')
@@ -12,9 +12,11 @@ Welcome
 <br><br>
 <P>Name: <b>Krizia Camille Uayan</b></P>
 <p>Pen-Name: <b>Krizia</b></p>
+<p>Email: <b>kriziacamilleuayan@gmail.com</b></p>
+<p>Contact Number: <b>09123456789</b></p>
 <p>Website: <b>Deviantart.com/Krizia</b></p>
 <p>Description/Bio: <b>I love cats!!!!!!!!!!!!!!</b></p>
 <br><br><br>
-<a class="btn btn-info btn-lg link animated fadeInUp delay-1s" href="{{URL::to('artist-account')}}" style="margin-left:40px">Edit Profile</a>
+<a class="btn btn-info btn-lg link animated fadeInUp delay-1s" href="{{URL::to('artist-edit-profile')}}" style="margin-left:40px">Edit Profile</a>
 <br><br><br><br><br>
 @endsection

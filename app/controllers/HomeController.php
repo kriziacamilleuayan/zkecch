@@ -37,7 +37,7 @@ class HomeController extends BaseController {
 		if($id->intId == 2)
 		{
 		Session::put('id', $id->intId);
-		Session::put('name', $user->strName);
+		Session::put('name', $user->strPenName);
 		return Redirect::to('artist-home');
 		}
 		else if($id->intId == 1)
@@ -64,21 +64,22 @@ class HomeController extends BaseController {
 
 	public function artistHome()
 	{
-		$user = DB::table('tblUser')
-		->distinct()
-		->where('intId', '=', Session::get('id'))
-		->first();
 
 		$arts = DB::table('tblProduct')
 		->where('intUserId', '=', Session::get('id'))
 		->get();
 
-		return View::make('layouts/artist/artist-home')->with('user',$user)->with('arts',$arts);
+		return View::make('layouts/artist/artist-home')->with('arts',$arts);
 	}
 
 	public function artistProfile()
 	{
-		return View::make('layouts/artist/artist-profile');
+		$user = DB::table('tblUser')
+		->leftjoin('tblAccount', 'tblUser.intId', '=', 'tblAccount.intId')
+		->where('tblUser.intId', '=', Session::get('id'))
+		->first();
+
+		return View::make('layouts/artist/artist-profile')->with('user',$user);
 	}
 
 	public function artistEditProfile()
@@ -93,7 +94,11 @@ class HomeController extends BaseController {
 
 	public function artistArtworks()
 	{
-		return View::make('layouts/artist/artist-artworks');
+		$arts = DB::table('tblProduct')
+		->where('intUserId', '=', Session::get('id'))
+		->get();
+		
+		return View::make('layouts/artist/artist-artworks')->with('arts',$arts);
 	}
 
 	public function artistAddToCart()

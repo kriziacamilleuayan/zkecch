@@ -21,6 +21,7 @@ class CreateProductTable extends Migration {
 			$table->string('strYearCreated', 25);
 			$table->text('strImagePath')->nullable();
 			$table->timestamps();
+			$table->integer('intCategory');
 			$table->integer('intStatusId');
 		});	
 	}

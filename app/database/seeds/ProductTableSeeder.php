@@ -14,6 +14,7 @@ class ProductTableSeeder extends Seeder {
 				'strYearCreated'	=> '2016',
 				'strImagePath'		=> 'img/macbook-pro.png',
 				'intStatusId'		=> 1,
+				'intCategory'		=> 1,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);

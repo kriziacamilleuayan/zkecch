@@ -53,7 +53,110 @@
     </div>
 </nav><!--main-nav-end-->
 
+<div style="overflow:hidden;">
+<header class="header" id="header"><!--header-start-->
+    <div class="container">
+        <figure class="logo animated fadeInDown delay-07s">
+            <a href="#"><img src="img/logo.png" alt=""></a> 
+        </figure>   
+        <h1 class="animated fadeInDown delay-07s"><font color="gray"><bold>Welcome to <strong>Zkecch Co.</strong></bold></font></h1>
+        <ul class="we-create animated fadeInUp delay-1s">
+            <li><font size="+1" color="black">Show. Inspire. Earn</font></li>
+        </ul>
+        <!-- Triggers the modal with the log-in button -->
+            <button type="button" class="btn btn-info btn-lg link animated fadeInUp delay-1s" data-toggle="modal" data-target="#signupModal">Sign Up</button>
+        
+            <button type="button" class="btn btn-info btn-lg link animated fadeInUp delay-1s" data-toggle="modal" data-target="#loginModal" style="margin-left:40px">Log in</button>
+        
+        <!-- Modal -->
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content -->
+                <div class="modal-content">
+                        <div class="col-lg-10 col-lg-offset-1  form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Login to our site</h3>
+                                    <p>Enter your email and password to log on:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <img src="img/lock.png" alt="">
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" class="login-form" action="{{URL::to('login')}}" method="post">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Username</label>
+                                        <input type="text" name="form-username" placeholder="Email..." class="form-username form-control" id="form-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                    </div>
+                                    <button type="submit" class="btn">Sign in!</button>
+                                </form>
+                            </div>
+                        </div>
+                
+ 
+                </div>
+
+                <!-- End of modal content -->
+            </div>
+        </div>
+
+
+        <div id="signupModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                        <div class="col-lg-10 col-lg-offset-1  form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Start your membership now!</h3>
+                                    <p>Be part in sharing wonderful masterpieces to the world!</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <img src="img/signup.png" alt="">
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="{{URL::to('login')}}" method="post" class="login-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-firstname">First Name</label>
+                                        <input type="text" name="form-firstname" placeholder="First Name..." class="form-username form-control" id="form-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-lastname">Last Name</label>
+                                        <input type="text" name="form-lastname" placeholder="Last Name..." class="form-username form-control" id="form-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-username">Email</label>
+                                        <input type="text" name="form-username" placeholder="Email..." class="form-username form-control" id="form-username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password">Password</label>
+                                        <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                    </div>
+                                    <button type="submit" class="btn">Begin your journey!</button>
+                                </form>
+                            </div>
+                        </div>
+                
+ 
+                </div>
+
+                <!-- End of modal content -->
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+</header><!--header-end-->
 
 <section class="main-section" id="service"><!--main-section-start-->
 	<div class="container">

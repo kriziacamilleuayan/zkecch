@@ -12,4 +12,3 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
-Route::post('/login', 'HomeController@LogIn');

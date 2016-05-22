@@ -106,6 +106,11 @@ class HomeController extends BaseController {
 		return View::make('layouts/artist/artist-submitart');
 	}
 
+	public function artistOrders()
+	{
+		return View::make('layouts/artist/artist-orders');
+	}
+
 	public function adminHome()
 	{
 		return View::make('layouts/admin/admin-home');

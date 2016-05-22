@@ -46,7 +46,7 @@
             <li><a href="{{URL::to('artist-home')}}">Home</a></li>
             <li><a href="{{URL::to('artist-artworks')}}">Artworks</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
-            <li><a href="#team">Orders</a></li>
+            <li><a href="{{URL::to('artist-orders')}}">Orders</a></li>
             <li><a href="{{URL::to('artist-account')}}">Account</a></li>
             <li><a href="{{URL::to('logout')}}">Logout</a></li>
         </ul>

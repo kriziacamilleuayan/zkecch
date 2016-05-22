@@ -27,6 +27,7 @@ Route::group(['before' => 'login'], function() {
 	Route::get('/artist-artworks', 'HomeController@artistArtworks');
 	Route::get('/artist-addtocart', 'HomeController@artistAddToCart');
 	Route::get('/artist-submitart', 'HomeController@artistSubmitArt');
+	Route::get('/artist-orders', 'HomeController@artistOrders');
 
 	//admin
 	Route::get('/admin-home', 'HomeController@adminHome');

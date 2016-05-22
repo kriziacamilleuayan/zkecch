@@ -13,11 +13,18 @@
 
 Route::get('/', 'HomeController@showWelcome');
 Route::post('login', 'HomeController@doLogin');
+Route::post('sign-up', 'HomeController@signUp');
 Route::get('logout', 'HomeController@doLogout');
 
-Route::get('/artist-home', 'HomeController@artistHome');
-Route::get('/artist-profile', 'HomeController@artistProfile');
-Route::get('/artist-edit-profile', 'HomeController@artistEditProfile');
-Route::get('/artist-account', 'HomeController@artistAccount');
 
-Route::get('/admin-home', 'HomeController@adminHome');
+Route::group(['before' => 'login'], function() {
+	
+	//artist
+	Route::get('/artist-home', 'HomeController@artistHome');
+	Route::get('/artist-profile', 'HomeController@artistProfile');
+	Route::get('/artist-edit-profile', 'HomeController@artistEditProfile');
+	Route::get('/artist-account', 'HomeController@artistAccount');
+
+	//admin
+	Route::get('/admin-home', 'HomeController@adminHome');
+});

@@ -48,9 +48,24 @@ class HomeController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	public function signUp()
+	{
+		Session::flush();
+		return Redirect::to('/');
+	}
+
 	public function artistHome()
 	{
-		return View::make('layouts/artist/artist-home');
+		$user = DB::table('tblUser')
+		->distinct()
+		->where('intId', '=', Session::get('id'))
+		->first();
+
+		$arts = DB::table('tblProduct')
+		->where('intUserId', '=', Session::get('id'))
+		->get();
+
+		return View::make('layouts/artist/artist-home')->with('user',$user)->with('arts',$arts);
 	}
 
 	public function artistProfile()

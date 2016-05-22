@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" class="login-form" action="{{URL::to('login')}}" method="post">
+                                <form role="form" class="login-form" action="{{URL::to('')}}" method="post">
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">Username</label>
                                         <input type="text" name="form-username" placeholder="Email..." class="form-username form-control" id="form-username">

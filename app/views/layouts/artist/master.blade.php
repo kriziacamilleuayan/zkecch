@@ -42,7 +42,7 @@
 <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
         <ul class="main-nav">
-        	<li><a href="#header">Krizia(profile)</a></li>
+        	<li><a href="#header">Krizia(artist)</a></li>
             <li><a href="#service">Home</a></li>
             <li><a href="#Portfolio">Artworks</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>

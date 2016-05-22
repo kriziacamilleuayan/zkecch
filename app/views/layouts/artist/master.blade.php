@@ -48,7 +48,7 @@
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="#team">Orders</a></li>
             <li><a href="{{URL::to('artist-account')}}">Account</a></li>
-            <li><a href="#Logout">Logout</a></li>
+            <li><a href="{{URL::to('logout')}}">Logout</a></li>
         </ul>
         <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
     </div>

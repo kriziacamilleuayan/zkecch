@@ -20,6 +20,34 @@ class HomeController extends BaseController {
 		return View::make('layouts/home');
 	}
 
+	public function doLogin()
+	{	
+		$id = DB::table('tblAccount')
+		->distinct()
+		->where('strUserEmail', '=', Request::input('form-username'))
+		->where('strUserPassword', '=', Request::input('form-password'))
+		->first();
+
+		if($id->intId == 2)
+		{
+		Session::put('id', $id->intId);
+		return Redirect::to('artist-home');
+		}
+		else if($id->intId == 1)
+		{
+		Session::put('id', $id->intId);
+		return Redirect::to('admin-home');
+		}
+		else
+			return Redirect::to('/');
+	}
+
+	public function doLogout()
+	{
+		Session::flush();
+		return Redirect::to('/');
+	}
+
 	public function artistHome()
 	{
 		return View::make('layouts/artist/artist-home');

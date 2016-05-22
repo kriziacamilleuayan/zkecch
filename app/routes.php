@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
+Route::post('login', 'HomeController@doLogin');
+Route::get('logout', 'HomeController@doLogout');
 
 Route::get('/artist-home', 'HomeController@artistHome');
 Route::get('/artist-profile', 'HomeController@artistProfile');

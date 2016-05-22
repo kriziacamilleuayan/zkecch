@@ -13,89 +13,65 @@ Artworks
 </div>
 <br><br>
 <div>
+@foreach($arts as $art)
     <div class="team-leader-box">
         <div class="fadeInDown delay-09s"> 
             <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="img/portfolio-pic1.jpg" alt="" style="width: 300px; height: 300px">
+            <img src="{{ asset($art->strImagePath) }}" alt="" style="width: 300px; height: 300px">
         </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#art-description">Art Name</button></h3>
-        <span class="fadeInDown delay-09s">Category</span>
-        <p class="fadeInDown delay-09s">Description</p>
+       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#{{$art->intId}}">{{$art->strName}}</button></h3>
+        @if($art->intCategory == 1)
+        <span class="fadeInDown delay-09s">PORTRAIT</span>
+        @elseif($art->intCategory == 2)
+        <span class="fadeInDown delay-09s">LANDSCAPE</span>
+        @elseif($art->intCategory == 3)
+        <span class="fadeInDown delay-09s">DIGITAL</span>
+        @elsif($art->intCategory == 4)
+        <span class="fadeInDown delay-09s">PAINTING</span>
+        @endif
+        <p class="fadeInDown delay-09s">{{$art->strDescription}}</p>
     </div>
+@endforeach
 
-    <div class="team-leader-box">
-        <div class="fadeInDown delay-09s"> 
-            <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="img/portfolio-pic1.jpg" alt="" style="width: 300px; height: 300px">
-        </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#art-description">Art Name</button></h3>
-        <span class="fadeInDown delay-09s">Category</span>
-        <p class="fadeInDown delay-09s">Description</p>
-    </div>
-
-    <div class="team-leader-box">
-        <div class="fadeInDown delay-09s"> 
-            <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="img/portfolio-pic1.jpg" alt="" style="width: 300px; height: 300px">
-        </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#art-description">Art Name</button></h3>
-        <span class="fadeInDown delay-09s">Category</span>
-        <p class="fadeInDown delay-09s">Description</p>
-    </div>
-
-    <div class="team-leader-box">
-        <div class="fadeInDown delay-09s"> 
-            <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="img/portfolio-pic1.jpg" alt="" style="width: 300px; height: 300px">
-        </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#art-description">Art Name</button></h3>
-        <span class="fadeInDown delay-09s">Category</span>
-        <p class="fadeInDown delay-09s">Description</p>
-    </div>
-
-    <div class="team-leader-box">
-        <div class="fadeInDown delay-09s"> 
-            <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="img/portfolio-pic1.jpg" alt="" style="width: 300px; height: 300px">
-        </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#art-description">Art Name</button></h3>
-        <span class="fadeInDown delay-09s">Category</span>
-        <p class="fadeInDown delay-09s">Description</p>
-    </div>
-    <div class="team-leader-box">
-        <div class="fadeInDown delay-09s"> 
-            <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="img/portfolio-pic1.jpg" alt="" style="width: 300px; height: 300px">
-        </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#art-description">Art Name</button></h3>
-        <span class="fadeInDown delay-09s">Category</span>
-        <p class="fadeInDown delay-09s">Description</p>
-    </div>
 </div>
 
 <!-- Modal -->
-<div id="art-description" class="modal fade" role="dialog">
+<div id="{{$art->intId}}" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Art Name</h4>
+        <h4 class="modal-title">{{$art->strName}}</h4>
       </div>
       <div class="modal-body">
-		<img src="img/portfolio-pic1.jpg">
+		<img src="{{ asset($art->strImagePath) }}">
 		<div class="text-left">
-			<p>Year: <b>1990</b></p>
-			<p>Artist: <b>Krizia</b></p>
-			<p>Category: <b>Digital</b></p>
-			<p>Description: <b>describe me. I'm pretty</b></p>
-			<p>Status: <b>Original Available</b></p>
+			<p>Year: <b>{{$art->strYearCreated}}</b></p>
+			<p>Artist: <b>{{Session::get('name')}}</b></p>
+      @if($art->intCategory == 1)
+			<p>Category: <b>PORTRAIT</b></p>
+      @elseif($art->intCategory == 2)
+      <p>Category: <b>LANDSCAPE</b></p>
+      @elseif($art->intCategory == 3)
+      <p>Category: <b>DIGITAL</b></p>
+      @elseif($art->intCategory == 4)
+      <p>Category: <b>PAINTING</b></p>
+      @endif
+			<p>Description: <b>{{$art->strDescription}}</b></p>
+      @if($art->intStatusId == 1)
+			<p>Status: <b>Not Available</b></p>
+      @elseif($art->intStatusId == 2)
+      <p>Status: <b>Original Available</b></p>
+      @elseif($art->intStatusId == 3)
+      <p>Status: <b>Print Available</b></p>
+      @endif
 			<br>
-			<div style="display:flex">
+			<!-- <div style="display:flex">
 				<a type="button" class="btn btn-danger" href="{{URL::to('artist-addtocart')}}">Add to cart</a>
 				<p style="margin-left: 10px"><b>Php 5000.00</b></p>
-			</div>
+			</div> -->
 		</div>
         
       </div>

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
+Route::get('/artist-home', 'HomeController@artistHome');
+Route::get('/admin-home', 'HomeController@adminHome');

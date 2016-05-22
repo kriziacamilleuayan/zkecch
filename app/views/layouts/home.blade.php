@@ -46,7 +46,6 @@
             <li><a href="#service">Services</a></li>
             <li><a href="#Portfolio">Portfolio</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
-            <li><a href="#client">Clients</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>

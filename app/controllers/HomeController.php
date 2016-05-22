@@ -28,14 +28,22 @@ class HomeController extends BaseController {
 		->where('strUserPassword', '=', Request::input('form-password'))
 		->first();
 
+		$user = DB::table('tblUser')
+		->distinct()
+		->where('intId', '=', $id->intId)
+		->first();
+
+
 		if($id->intId == 2)
 		{
 		Session::put('id', $id->intId);
+		Session::put('name', $user->strName);
 		return Redirect::to('artist-home');
 		}
 		else if($id->intId == 1)
 		{
 		Session::put('id', $id->intId);
+		Session::put('name', $user->strName);
 		return Redirect::to('admin-home');
 		}
 		else

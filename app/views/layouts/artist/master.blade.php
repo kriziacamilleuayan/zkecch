@@ -42,17 +42,13 @@
 <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
         <ul class="main-nav">
-        	<li><a href="{{URL::to('artist-profile')}}">Krizia(artist)</a></li>
+        	<li><a href="{{URL::to('artist-profile')}}">{{ Session::get('name') }} (Artist)</li>
             <li><a href="{{URL::to('artist-home')}}">Home</a></li>
             <li><a href="{{URL::to('artist-artworks')}}">Artworks</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="#team">Orders</a></li>
             <li><a href="{{URL::to('artist-account')}}">Account</a></li>
-<<<<<<< HEAD
-            <li><a href="{{URL::to('/')}}">Logout</a></li>
-=======
             <li><a href="{{URL::to('logout')}}">Logout</a></li>
->>>>>>> db6c780892e6d55cb6dfae0230a0776b5838134d
         </ul>
         <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
     </div>

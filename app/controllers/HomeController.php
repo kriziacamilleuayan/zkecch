@@ -28,14 +28,22 @@ class HomeController extends BaseController {
 		->where('strUserPassword', '=', Request::input('form-password'))
 		->first();
 
+		$user = DB::table('tblUser')
+		->distinct()
+		->where('intId', '=', $id->intId)
+		->first();
+
+
 		if($id->intId == 2)
 		{
 		Session::put('id', $id->intId);
+		Session::put('name', $user->strName);
 		return Redirect::to('artist-home');
 		}
 		else if($id->intId == 1)
 		{
 		Session::put('id', $id->intId);
+		Session::put('name', $user->strName);
 		return Redirect::to('admin-home');
 		}
 		else
@@ -48,9 +56,24 @@ class HomeController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	public function signUp()
+	{
+		Session::flush();
+		return Redirect::to('/');
+	}
+
 	public function artistHome()
 	{
-		return View::make('layouts/artist/artist-home');
+		$user = DB::table('tblUser')
+		->distinct()
+		->where('intId', '=', Session::get('id'))
+		->first();
+
+		$arts = DB::table('tblProduct')
+		->where('intUserId', '=', Session::get('id'))
+		->get();
+
+		return View::make('layouts/artist/artist-home')->with('user',$user)->with('arts',$arts);
 	}
 
 	public function artistProfile()

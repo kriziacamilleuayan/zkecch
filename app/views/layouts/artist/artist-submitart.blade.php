@@ -47,7 +47,7 @@ Submit Art
     </div>
 <div class="form-group col-sm-8">
   <label for="price">Price (Php):</label>
-  <input type="number" class="form-control" id="price" name='price'>
+  <input type="number" name="price" class="form-control" id="price" name='price'>
 </div>
 </div>
 <br>

@@ -225,6 +225,7 @@ class HomeController extends BaseController {
 		 		'strArtImagePath'		=> '/img/' . trim(Request::input('name')),
 		 		'intStatus'		=> Request::input('status'),
 		 		'intCategory'		=> Request::input('category'),
+		 		'strPrice'			=> Request::input('price'),
 		 		'created_at'		=> date('Y-m-d H:i:s')
 		 	]
 		 );

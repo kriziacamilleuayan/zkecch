@@ -235,13 +235,11 @@
               @elseif($art->intCategory == 4)
               <div class=" Portfolio-box painting">
               @endif
-<<<<<<< HEAD
-                    <a href="" data-toggle="modal" data-target="#art-description"><img src="{{asset($art->strImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
-                    <h3>{{$art->strName}}</h3>
-=======
-                    <a href="#"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
+
+                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
                     <h3>{{$art->strArtName}}</h3>
->>>>>>> e0be0008df9885c8758a0b99382494dff75a8389
+
+
                   @if($art->intCategory == 1)
                     <p>Portrait</p>
                   @elseif($art->intCategory == 2)

@@ -128,4 +128,9 @@ class HomeController extends BaseController {
 		return View::make('layouts/admin/admin-home');
 	}
 
+	public function adminArtistAccounts()
+	{
+		return View::make('layouts/admin/admin-artistaccounts');
+	}
+
 }

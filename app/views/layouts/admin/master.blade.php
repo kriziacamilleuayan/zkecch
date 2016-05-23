@@ -42,8 +42,8 @@
 <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
         <ul class="main-nav">
-        	<li><a href="#header">{{ Session::get('name') }}(Artist)</a></li>
-            <li><a href="#Portfolio">Artist Accounts</a></li>
+        	<li><a href="#header">{{ Session::get('name') }}(Admin)</a></li>
+            <li><a href="{{URL::to('admin-artistaccounts')}}">Artist Accounts</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="#team">Artworks</a></li>
             <li><a href="{{URL::to('logout')}}">Logout</a></li>

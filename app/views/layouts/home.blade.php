@@ -216,10 +216,10 @@
       <div class="portfolioFilter">  
         <ul class="Portfolio-nav wow fadeIn delay-02s">
         	<li><a href="#" data-filter="*" class="current" >All</a></li>
-            <li><a href="#" data-filter=".branding" >Portrait</a></li>
-            <li><a href="#" data-filter=".webdesign" >Landscape</a></li>
-            <li><a href="#" data-filter=".printdesign" >Painting</a></li>
-            <li><a href="#" data-filter=".photography" >Digital</a></li>
+            <li><a href="#" data-filter=".portrait" >Portrait</a></li>
+            <li><a href="#" data-filter=".landscape" >Landscape</a></li>
+            <li><a href="#" data-filter=".painting" >Painting</a></li>
+            <li><a href="#" data-filter=".digital" >Digital</a></li>
         </ul>
        </div> 
         

@@ -40,15 +40,15 @@ class HomeController extends BaseController {
 		->first();
 
 
-		if($id->intId == 2)
+		if($user->intUserType == 2)
 		{
-		Session::put('id', $id->intId);
+		Session::put('id', $user->intId);
 		Session::put('name', $user->strPenName);
 		return Redirect::to('artist-home');
 		}
-		else if($id->intId == 1)
+		else if($user->intUserType == 1)
 		{
-		Session::put('id', $id->intId);
+		Session::put('id', $user->intId);
 		Session::put('name', $user->strName);
 		return Redirect::to('admin-home');
 		}
@@ -64,7 +64,26 @@ class HomeController extends BaseController {
 
 	public function signUp()
 	{
-		Session::flush();
+		DB::table('tblUser')
+		->insert(
+			[
+				'intUserType'		=> 2,
+				'strName'	=> Request::input('form-firstname'),
+				'strPenName'	=>  Request::input('form-lastname'),
+				'intStatusId'		=> 1,
+				'created_at'		=> date('Y-m-d H:i:s')
+			]
+		);
+
+		DB::table('tblAccount')
+		->insert(
+			[
+				'strUserEmail'		=> Request::input('form-username'),
+				'strUserPassword'	=> Request::input('form-password'),
+				'created_at'		=> date('Y-m-d H:i:s')
+			]
+		);
+
 		return Redirect::to('/');
 	}
 
@@ -91,7 +110,48 @@ class HomeController extends BaseController {
 
 	public function artistEditProfile()
 	{
-		return View::make('layouts/artist/artist-edit-profile');
+		$user = DB::table('tblUser')
+		->leftjoin('tblAccount', 'tblUser.intId', '=', 'tblAccount.intId')
+		->where('tblUser.intId', '=', Session::get('id'))
+		->first();
+
+		return View::make('layouts/artist/artist-edit-profile')->with('user',$user);
+	}
+
+	public function saveProfile()
+	{
+ if(Input::hasFile('user_image_input')) {
+ 			Input::file('user_image_input')->move(public_path() . '/img/',
+ 						trim(Request::input('penname')));
+
+ 			DB::table('tblUser')
+ 			->where('intId', Session::get('id'))
+ 			->update([
+ 				'strName' => trim(Request::input('name')),
+ 				'strPenName' => trim(Request::input('penname')),
+ 				'strContactNumber' => trim(Request::input('contactnumber')),
+ 				'strDescription' => trim(Request::input('description')),
+ 				'strWebsite'	=>  trim(Request::input('website')),
+ 				'strImagePath'	=> '/img/' . trim(Request::input('penname')),
+ 				'updated_at' => date('Y-m-d H:i:s')
+ 			]);
+
+ 			Session::put('image', 'uploaded_images/teachers/' . trim(Request::input('stud_id_no')));
+ 		} else{
+ 			DB::table('tblUser')
+ 			->where('intId', Session::get('id'))
+ 			->update([
+ 				'strName' => trim(Request::input('name')),
+ 				'strPenName' => trim(Request::input('penname')),
+ 				'strContactNumber' => trim(Request::input('contactnumber')),
+ 				'strDescription' => trim(Request::input('description')),
+ 				'strWebsite'	=>  trim(Request::input('website')),
+ 				'updated_at' => date('Y-m-d H:i:s')
+ 			]);
+ 		}
+
+ 		Session::put('name', trim(Request::input('penname')));
+ 		return Redirect::to('artist-profile');
 	}
 
 	public function artistAccount()
@@ -106,6 +166,24 @@ class HomeController extends BaseController {
 		->get();
 		
 		return View::make('layouts/artist/artist-artworks')->with('arts',$arts);
+	}
+
+	public function submitArtworks()
+	{
+		// DB::table('tblProduct')
+		// ->insert(
+		// 	[
+		// 		'intUserId'		=> Session::get('id'),
+		// 		'strName'	=> Request::input('name'),
+		// 		'strDescription'		=> Request::input('description'),
+		// 		'strYearCreated'	=> Request::input('date'),
+		// 		'strImagePath'		=> 'img/macbook-pro.png',
+		// 		'intStatusId'		=> 1,
+		// 		'intCategory'		=> 3,
+		// 		'created_at'		=> date('Y-m-d H:i:s')
+		// 	]
+		// );
+		return Redirect::to('/artist-artworks');
 	}
 
 	public function artistAddToCart()

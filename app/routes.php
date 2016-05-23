@@ -23,8 +23,10 @@ Route::group(['before' => 'login'], function() {
 	Route::get('/artist-home', 'HomeController@artistHome');
 	Route::get('/artist-profile', 'HomeController@artistProfile');
 	Route::get('/artist-edit-profile', 'HomeController@artistEditProfile');
+	Route::post('/artist-save-edit-profile', 'HomeController@saveProfile');
 	Route::get('/artist-account', 'HomeController@artistAccount');
 	Route::get('/artist-artworks', 'HomeController@artistArtworks');
+	Route::post('/artist-artworks','HomeController@submitArtworks');
 	Route::get('/artist-addtocart', 'HomeController@artistAddToCart');
 	Route::get('/artist-submitart', 'HomeController@artistSubmitArt');
 	Route::get('/artist-orders', 'HomeController@artistOrders');

@@ -39,4 +39,5 @@ Route::group(['before' => 'login'], function() {
 	Route::get('/admin-artistaccounts', 'HomeController@adminArtistAccounts');
 	Route::get('/admin-artworks', 'HomeController@adminArtworks');
 	Route::get('/admin-profile', 'HomeController@adminProfile');
+	Route::get('/admin-transaction', 'HomeController@adminTransaction');
 });

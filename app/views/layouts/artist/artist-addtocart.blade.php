@@ -58,6 +58,10 @@ Add to Cart
   <label for="usr">Email*:</label>
   <input type="email" class="form-control" id="usr">
 </div>
+<div class="form-group col-sm-6 text-left">
+  <label for="usr">Address*:</label>
+  <input type="text" class="form-control" id="usr">
+</div>
   <div class="text-left col-sm-6 form-group">
     <br>
   <p><b>Delivery Mode*</b></p>

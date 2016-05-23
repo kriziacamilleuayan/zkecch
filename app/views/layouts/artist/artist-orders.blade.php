@@ -86,24 +86,34 @@ Orders
     <thead>
       <tr>
         <th>Order no.</th>
-        <th>Date of Order</th>
-        <th>Items</th>
-        <th>Status</th>
+        <th>Item Name</th>
+        <th>Price</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>01</td>
-        <td>November 01, 1988</td>
-        <td>wew</td>
-        <td>unpaid</td>
-      </tr>
+        <td>meh</td>
+        <td>1000.00</td>
+        </tr>
     </tbody>
   </table>
   </div>
+  <p class="text-right">Sub-Total: <b>Php 1000.00</b></p>
+  <p class="text-right">Delivery fee: <b>Php 50.00</b></p>
+  <p class="text-right">_________________________________________</p>
+  <p class="text-right">Total: <b>Php 1050.00</b></p>
+  <br><br>
+
+<div class="text-left">
+  <p>Name: <b>Erik Jon del Castro</b></p>
+  <p>Contact No.: <b>09999999999</b></p>
+  <p>Email: <b>erikjonjon@friendster.com</b></p>
+  <p>Delivery Mode: <b>Meet-up</b></p>
+  <p>Address: <b>Saan saan</b></p>
+ </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

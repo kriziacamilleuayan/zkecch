@@ -122,6 +122,7 @@
        <div class="modal-body">
        <img src="{{asset($art->strArtImagePath)}}">
        <div class="text-left">
+        <input type="text" style="border-color: white; line-height: 1px;">
             <p>Date Created: <b>{{$art->strArtName}}</b></p>
             <p>Artist: <b>{{$art->strName}}</b></p>
             @if($art->intCategory == 1)

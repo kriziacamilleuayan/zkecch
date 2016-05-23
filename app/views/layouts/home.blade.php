@@ -252,7 +252,7 @@
         <h2>team</h2>
         <h6>Take a closer look into our amazing team. We won’t bite.</h6>
         <div class="team-leader-block clearfix">
-            <div class="team-leader-box">
+            <div class="team-leader-box" style="height: inherit">
                 <div class="team-leader wow fadeInDown delay-03s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic1.jpg" alt="">
@@ -262,7 +262,7 @@
                 <span class="wow fadeInDown delay-03s">Project Manager</span>
                 <p class="wow fadeInDown delay-03s">Erik is a third year IT student who does nothing but KPOP. He has a talent in designing but hardly makes it in use. And he is the leader of the group.</p>
             </div>
-            <div class="team-leader-box">
+            <div class="team-leader-box" style="height: inherit">
                 <div class="team-leader  wow fadeInDown delay-06s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic2.jpg" alt="">
@@ -272,7 +272,7 @@
                 <span class="wow fadeInDown delay-06s">Lead Programmer</span>
                 <p class="wow fadeInDown delay-06s">Camille is the face of the group. She is good in web programming, as well, with PHP as the language of use. Reading is her hobby. She can read a 7-book series in two days!</p>
             </div>
-            <div class="team-leader-box">
+            <div class="team-leader-box" style="height: inherit">
                 <div class="team-leader wow fadeInDown delay-09s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic3.jpg" alt="">
@@ -283,7 +283,7 @@
                 <p class="wow fadeInDown delay-09s">Honey does most of the work. She loves to write, not codes but actual literary pieces. She loves It Started With A Kiss, and Conrad. She wants to be a novelist someday.</p>
             </div>
         </div><br><br><br>
-        <div class="team-leader-block clearfix">
+        <div class="team-leader-block clearfix" style="height: inherit">
             <div class="team-leader-box">
                 <div class="team-leader wow fadeInDown delay-03s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
@@ -294,7 +294,7 @@
                 <span class="wow fadeInDown delay-03s">Systems Analyst</span>
                 <p class="wow fadeInDown delay-03s">Zylah also loves KPOP like the leader. She is good in database. She loves reading pocketbooks. She is a good dancer, too. You should see her dance to the beat sometimes. </p>
             </div>
-            <div class="team-leader-box">
+            <div class="team-leader-box" style="height: inherit">
                 <div class="team-leader  wow fadeInDown delay-06s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic5.jpg" alt="">
@@ -304,7 +304,7 @@
                 <span class="wow fadeInDown delay-06s">Database Administrator</span>
                 <p class="wow fadeInDown delay-06s">Cassandra is quite good in designing too. She is fun to hang around with. She works better than those I-have-a-lot-of-excuses-so-I-cant-get-it-done dudes. She's sweet.</p>
             </div>
-            <div class="team-leader-box">
+            <div class="team-leader-box" style="height: inherit">
                 <div class="team-leader wow fadeInDown delay-09s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic6.jpg" alt="">

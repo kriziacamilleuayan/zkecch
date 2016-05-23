@@ -295,6 +295,10 @@ class HomeController extends BaseController {
 		return View::make('layouts/admin/admin-profile')->with('user',$user);
 	}
 
+	public function adminTransaction()
+	{
+		return View::make('layouts/admin/admin-transaction');
+	}
 
 
 }

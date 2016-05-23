@@ -16,13 +16,13 @@ class CreateProductTable extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('intId');
 			$table->integer('intUserId');
-			$table->string('strName', 100);
-			$table->string('strDescription', 250);
+			$table->string('strArtName', 100);
+			$table->string('strArtDescription', 250);
 			$table->string('strYearCreated', 25);
-			$table->text('strImagePath')->nullable();
+			$table->text('strArtImagePath')->nullable();
 			$table->timestamps();
 			$table->integer('intCategory');
-			$table->integer('intStatusId');
+			$table->integer('intStatus');
 		});	
 	}
 

@@ -237,7 +237,7 @@
               @endif
 
                     <a href="#"  data-toggle="modal" data-target="#art-description"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
-                    <h3>{{$art->strArtName}} by {{$art->strName}}</h3>
+                    <h5>'<b>{{$art->strArtName}}</b>' by {{$art->strName}}</h5>
 
 
                   @if($art->intCategory == 1)
@@ -275,7 +275,7 @@
            <p>Status: <b>Original Available</b></p>
            <br>
            <div style="display:flex">
-               <a type="button" class="btn btn-danger" href="{{URL::to('add-to-cart')}}">Add to cart</a>
+               <a type="button" class="btn btn-danger" href="{{URL::to('add-to-cart')}}">Order Now</a>
                <p style="margin-left: 10px"><b>Php 5000.00</b></p>
            </div>
        </div>

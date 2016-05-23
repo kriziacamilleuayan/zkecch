@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=1">
 
-<title>Add to Cart</title>
+<title>Order Form</title>
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
 
@@ -66,7 +66,7 @@
 </nav><!--main-nav-end-->
 <div class="container">
 <br><br>
-<h1>Add to Cart</h1>
+<h1>Order Form</h1>
 <br><br>
 
 <div class="container">

@@ -45,6 +45,10 @@ Submit Art
       </select>
       <br>
     </div>
+<div class="form-group col-sm-8">
+  <label for="price">Price (Php):</label>
+  <input type="number" class="form-control" id="price" name='price'>
+</div>
 </div>
 <br>
 <label class="checkbox-inline"><input type="checkbox" value="">'I have read and agree to the Terms and Conditions'*</label>

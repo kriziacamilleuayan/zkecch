@@ -19,7 +19,7 @@ Artworks
             <div class="team-leader-shadow"><a href="#"></a></div>
             <img src="{{ asset($art->strArtImagePath) }}" alt="" style="width: 300px; height: 300px">
         </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#{{$art->intId}}">{{$art->strArtName}}</button></h3>
+       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#{{$art->intArtId}}">{{$art->strArtName}}</button></h3>
         @if($art->intCategory == 1)
         <span class="fadeInDown delay-09s">PORTRAIT</span>
         @elseif($art->intCategory == 2)
@@ -37,7 +37,7 @@ Artworks
 
 <!-- Modal -->
 @foreach($arts as $art)
-<div id="{{$art->intId}}" class="modal fade" role="dialog">
+<div id="{{$art->intArtId}}" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->

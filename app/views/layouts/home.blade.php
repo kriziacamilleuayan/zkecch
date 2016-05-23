@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<nav class="main-nav-outer" id="test"><!--main-nav-start-->
+<nav class="main-nav-outer" id="test" style="background-color: rgb(212, 192, 180)"><!--main-nav-start-->
 	<div class="container">
         <div id="custom-search-input" class="col-sm-2 pull-right" style="margin-top: 35px">
                 <div class="input-group">

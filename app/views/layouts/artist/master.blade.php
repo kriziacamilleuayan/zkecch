@@ -39,7 +39,7 @@
 </head>
 <body>
 
-<nav class="main-nav-outer" id="test"><!--main-nav-start-->
+<nav class="main-nav-outer" id="test" style="background-color: rgb(212, 192, 180)"><!--main-nav-start-->
 	<div class="container">
         <ul class="main-nav">
         	<li><a href="{{URL::to('artist-profile')}}">{{ Session::get('name') }}(Artist)</li>

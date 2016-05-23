@@ -26,7 +26,7 @@ Artworks
         <span class="fadeInDown delay-09s">LANDSCAPE</span>
         @elseif($art->intCategory == 3)
         <span class="fadeInDown delay-09s">DIGITAL</span>
-        @elsif($art->intCategory == 4)
+        @elseif($art->intCategory == 4)
         <span class="fadeInDown delay-09s">PAINTING</span>
         @endif
         <p class="fadeInDown delay-09s">{{$art->strDescription}}</p>
@@ -36,6 +36,7 @@ Artworks
 </div>
 
 <!-- Modal -->
+@foreach($arts as $art)
 <div id="{{$art->intId}}" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -82,6 +83,7 @@ Artworks
 
   </div>
 </div>
+@endforeach
 
 
 @endsection

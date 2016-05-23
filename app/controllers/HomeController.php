@@ -64,9 +64,10 @@ class HomeController extends BaseController {
 
 	public function artistHome()
 	{
-
 		$arts = DB::table('tblProduct')
 		->where('intUserId', '=', Session::get('id'))
+		->orderBy('created_at', 'desc')
+		->take(5)
 		->get();
 
 		return View::make('layouts/artist/artist-home')->with('arts',$arts);

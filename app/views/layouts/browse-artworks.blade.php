@@ -67,72 +67,83 @@
 
 
 <section class="main-section paddind" id="Portfolio"><!--main-section-start-->
-    <div class="container">
-    <br><br>
-    <h1>Browse all Artworks</h1>
-    <br><br>
-
-
+  <div class="container">
+      <h2>Browse All Artworks</h2>
+      <div class="portfolioFilter">  
+        <ul class="Portfolio-nav wow fadeIn delay-02s">
+          <li><a href="#" data-filter="*" class="current" >All</a></li>
+            <li><a href="#" data-filter=".portrait" >Portrait</a></li>
+            <li><a href="#" data-filter=".landscape" >Landscape</a></li>
+            <li><a href="#" data-filter=".painting" >Painting</a></li>
+            <li><a href="#" data-filter=".digital" >Digital</a></li>
+        </ul>
+       </div> 
+        
+  </div>
     <div class="portfolioContainer wow fadeInUp delay-04s">
+              @foreach($arts as $art)
+              @if($art->intCategory == 1)
               <div class=" Portfolio-box portrait">
+              @elseif($art->intCategory == 2)
               <div class=" Portfolio-box landscape">
+              @elseif($art->intCategory == 3)
               <div class=" Portfolio-box digital">
+              @elseif($art->intCategory == 4)
               <div class=" Portfolio-box painting">
-
-                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="" alt="" style="height: 250px; width: 300px;"></a>    
-                    <h3>Art Name</h3>
+              @endif
+                  <button data-toggle="modal" data-target="#{{$art->intArtId}}"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></button>  
+                  <h3>{{$art->strArtName}}</h3>
+                  @if($art->intCategory == 1)
+                    <p>Portrait</p>
+                  @elseif($art->intCategory == 2)
+                    <p>Landscape</p>
+                  @elseif($art->intCategory == 3)
+                    <p>Digital</p>
+                  @elseif($art->intCategory == 4)
+                    <p>Painting</p>
+                  @endif
               </div>
-              </div>    
+              @endforeach
     </div>
-    </div>
-              <div class=" Portfolio-box portrait">
-              <div class=" Portfolio-box landscape">
-              <div class=" Portfolio-box digital">
-              <div class=" Portfolio-box painting">
-
-                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="" alt="" style="height: 250px; width: 300px;"></a>    
-                    <h3>Art Name</h3>
-              </div>
-              </div>    
-    </div>
-    </div>
-              <div class=" Portfolio-box portrait">
-              <div class=" Portfolio-box landscape">
-              <div class=" Portfolio-box digital">
-              <div class=" Portfolio-box painting">
-
-                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="" alt="" style="height: 250px; width: 300px;"></a>    
-                    <h3>Art Name</h3>
-              </div>
-              </div>    
-    </div>
-    </div>
-
-</div>
 </section>
 
+@foreach($arts as $art)
  <!-- Modal -->
- <div id="art-description" class="modal fade" role="dialog">
+ <div id="{{$art->intArtId}}" class="modal fade" role="dialog">
    <div class="modal-dialog">
  
      <!-- Modal content-->
      <div class="modal-content">
        <div class="modal-header">
          <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title">Art Name</h4>
+         <h4 class="modal-title">{{$art->strArtName}}</h4>
        </div>
        <div class="modal-body">
-       <img src="img/portfolio-pic1.jpg">
+       <img src="{{asset($art->strArtImagePath)}}">
        <div class="text-left">
-           <p>Year: <b>1990</b></p>
-           <p>Artist: <b>Krizia</b></p>
-           <p>Category: <b>Digital</b></p>
-           <p>Description: <b>describe me. I'm pretty</b></p>
-           <p>Status: <b>Original Available</b></p>
+            <p>Date Created: <b>{{$art->strArtName}}</b></p>
+            <p>Artist: <b>{{$art->strName}}</b></p>
+            @if($art->intCategory == 1)
+            <p>Category: <b>PORTRAIT</b></p>
+            @elseif($art->intCategory == 2)
+            <p>Category: <b>LANDSCAPE</b></p>
+            @elseif($art->intCategory == 3)
+            <p>Category: <b>DIGITAL</b></p>
+            @elseif($art->intCategory == 4)
+            <p>Category: <b>PAINTING</b></p>
+            @endif
+            <p>Description: <b>{{$art->strArtDescription}}</b></p>
+            @if($art->intStatus == 1)
+            <p>Status: <b>Not Available</b></p>
+            @elseif($art->intStatus == 2)
+            <p>Status: <b>Original Available</b></p>
+            @elseif($art->intStatus == 3)
+            <p>Status: <b>Print Available</b></p>
+            @endif
            <br>
            <div style="display:flex">
                <a type="button" class="btn btn-danger" href="{{URL::to('add-to-cart')}}">Add to cart</a>
-               <p style="margin-left: 10px"><b>Php 5000.00</b></p>
+               <p style="margin-left: 10px"><b>{{$art->strPrice}}</b></p>
            </div>
        </div>
          
@@ -144,7 +155,7 @@
 
    </div>
  </div>
-
+@endforeach
 
 </div>
 

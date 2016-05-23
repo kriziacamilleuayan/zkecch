@@ -237,7 +237,7 @@
               @endif
 
                     <a href="#"  data-toggle="modal" data-target="#art-description"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
-                    <h3>{{$art->strArtName}}</h3>
+                    <h3>{{$art->strArtName}} by {{$art->strName}}</h3>
 
 
                   @if($art->intCategory == 1)

@@ -55,7 +55,7 @@
         	<li></li>
             <li><a href="#header">Home</a></li>
             <li><a href="#service">Services</a></li>
-            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#Portfolio">Gallery</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -211,8 +211,8 @@
 
 <section class="main-section paddind" id="Portfolio"><!--main-section-start-->
 	<div class="container">
-    	<h2>Portfolio</h2>
-    	<h6>Fresh portfolio of designs that will keep you wanting more.</h6>
+    	<h2>Gallery</h2>
+    	<h6>Latest artworks by different artists</h6>
       <div class="portfolioFilter">  
         <ul class="Portfolio-nav wow fadeIn delay-02s">
         	<li><a href="#" data-filter="*" class="current" >All</a></li>
@@ -235,7 +235,7 @@
               @elseif($art->intCategory == 4)
               <div class=" Portfolio-box painting">
               @endif
-                    <a href="#"><img src="{{asset($art->strImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
+                    <a href="" data-toggle="modal" data-target="#art-description"><img src="{{asset($art->strImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
                     <h3>{{$art->strName}}</h3>
                   @if($art->intCategory == 1)
                     <p>Portrait</p>
@@ -250,6 +250,44 @@
               @endforeach
               </div>	
     </div>
+
+
+ <!-- Modal -->
+ <div id="art-description" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+ 
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Art Name</h4>
+       </div>
+       <div class="modal-body">
+       <img src="img/portfolio-pic1.jpg">
+       <div class="text-left">
+           <p>Year: <b>1990</b></p>
+           <p>Artist: <b>Krizia</b></p>
+           <p>Category: <b>Digital</b></p>
+           <p>Description: <b>describe me. I'm pretty</b></p>
+           <p>Status: <b>Original Available</b></p>
+           <br>
+           <div style="display:flex">
+               <a type="button" class="btn btn-danger" href="{{URL::to('add-to-cart')}}">Add to cart</a>
+               <p style="margin-left: 10px"><b>Php 5000.00</b></p>
+           </div>
+       </div>
+         
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
+<a type="button" class="btn btn-info btn-lg link animated fadeInUp delay-1s" href="{{URL::to('browse-artworks')}}" style="margin-left:40px">Browse all artworks</a>
+        
 </section><!--main-section-end-->
 
 

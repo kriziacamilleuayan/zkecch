@@ -242,5 +242,15 @@ class HomeController extends BaseController {
 		return View::make('layouts/admin/admin-profile');
 	}
 
+	public function browseArtworks()
+	{
+		return View::make('layouts/browse-artworks');
+	}
+
+	public function addToCart()
+	{
+		return View::make('layouts/add-to-cart');
+	}
+
 }
 

@@ -109,6 +109,7 @@
 
 @foreach($arts as $art)
  <!-- Modal -->
+  <form role="form" class="order-form" action="{{URL::to('add-to-cart')}}" method="post">
  <div id="{{$art->intArtId}}" class="modal fade" role="dialog">
    <div class="modal-dialog">
  
@@ -142,7 +143,7 @@
             @endif
            <br>
            <div style="display:flex">
-               <a type="button" class="btn btn-danger" href="{{URL::to('add-to-cart')}}">Add to cart</a>
+               <button type="submit" class="btn btn-danger">Add to Cart</button>
                <p style="margin-left: 10px"><b>{{$art->strPrice}}</b></p>
            </div>
        </div>
@@ -155,6 +156,7 @@
 
    </div>
  </div>
+ </form>
 @endforeach
 
 </div>

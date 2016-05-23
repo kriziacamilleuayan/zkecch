@@ -74,6 +74,7 @@ class HomeController extends BaseController {
 
 	public function addToCart()
 	{
+		dd(Request::input('image'));
 		return View::make('layouts/add-to-cart');
 	}
 
@@ -303,6 +304,20 @@ class HomeController extends BaseController {
 
 		public function checkout()
 	{
+		DB::table('tblOrder')
+		->insert(
+			[
+				'strName'		=> Request::input('price'),
+				'strUserEmail'	=> Request::input('price'),
+				'strContactNumber'	=> Request::input('price'),
+				'strAddress'	=> Request::input('price'),
+				'intDeliveryMode'	=> Request::input('price'),
+				'intStatusId'	=> Request::input('price'),
+				'created_at'	=> date('Y-m-d H:i:s')
+			]
+		);
+
+
 		return View::make('layouts/checkout');
 	}
 

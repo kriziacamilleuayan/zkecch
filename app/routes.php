@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@showWelcome');
 Route::get('browse-artworks', 'HomeController@browseArtworks');
-Route::get('add-to-cart', 'HomeController@addToCart');
+Route::post('add-to-cart', 'HomeController@addToCart');
 Route::get('checkout', 'HomeController@checkout');
 Route::post('login', 'HomeController@doLogin');
 Route::post('sign-up', 'HomeController@signUp');

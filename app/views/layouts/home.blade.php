@@ -225,36 +225,30 @@
         
 	</div>
     <div class="portfolioContainer wow fadeInUp delay-04s">
-            	<div class=" Portfolio-box printdesign">
-                	<a href="#"><img src="img/Portfolio-pic1.jpg" alt=""></a>	
-                	<h3>Foto Album</h3>
-                    <p>Print Design</p>
-                </div>
-                <div class="Portfolio-box webdesign">
-                	<a href="#"><img src="img/Portfolio-pic2.jpg" alt=""></a>	
-                	<h3>land that can scape</h3>
-                    <p>Landscape</p>
-                </div>
-                <div class=" Portfolio-box branding">
-                	<a href="#"><img src="img/Portfolio-pic3.jpg" alt="" style="height: 360px, width: 270px"></a>	
-                	<h3>Honey</h3>
+            @foreach($arts as $art)
+              @if($art->intCategory == 1)
+              <div class=" Portfolio-box portrait">
+              @elseif($art->intCategory == 2)
+              <div class=" Portfolio-box landscape">
+              @elseif($art->intCategory == 3)
+              <div class=" Portfolio-box digital">
+              @elseif($art->intCategory == 4)
+              <div class=" Portfolio-box painting">
+              @endif
+                    <a href="#"><img src="{{asset($art->strImagePath)}}" alt=""></a>    
+                    <h3>{{$art->strName}}</h3>
+                  @if($art->intCategory == 1)
                     <p>Portrait</p>
-                </div>
-                <div class=" Portfolio-box photography" >
-                	<a href="#"><img src="img/Portfolio-pic4.jpg" alt=""></a>	
-                	<h3>Vinyl Record</h3>
-                    <p>Photography</p>
-                </div>
-                <div class=" Portfolio-box branding">
-                	<a href="#"><img src="img/Portfolio-pic5.jpg" alt=""></a>	
-                	<h3>Honey Honey</h3>
-                    <p>portrait</p>
-                </div>
-                <div class=" Portfolio-box photography">
-                	<a href="#"><img src="img/Portfolio-pic6.jpg" alt=""></a>	
-                	<h3>Windmills</h3>
-                    <p>Photography</p>
-                </div>
+                  @elseif($art->intCategory == 2)
+                    <p>Landscape</p>
+                  @elseif($art->intCategory == 3)
+                    <p>Digital</p>
+                  @elseif($art->intCategory == 4)
+                    <p>Painting</p>
+                  @endif
+              </div>
+              @endforeach
+              </div>	
     </div>
 </section><!--main-section-end-->
 

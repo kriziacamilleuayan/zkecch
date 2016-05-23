@@ -17,7 +17,13 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('layouts/home');
+		$arts = DB::table('tblProduct')
+		//->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
+		->orderBy('created_at', 'asc')
+		->take(6)
+		->get();
+
+		return View::make('layouts/home')->with('arts',$arts);
 	}
 
 	public function doLogin()
@@ -66,8 +72,8 @@ class HomeController extends BaseController {
 	{
 		$arts = DB::table('tblProduct')
 		->where('intUserId', '=', Session::get('id'))
-		->orderBy('created_at', 'desc')
-		->take(5)
+		->orderBy('created_at', 'asc')
+		->take(6)
 		->get();
 
 		return View::make('layouts/artist/artist-home')->with('arts',$arts);

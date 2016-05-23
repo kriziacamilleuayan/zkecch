@@ -205,6 +205,11 @@ class HomeController extends BaseController {
 		return View::make('layouts/artist/artist-orders');
 	}
 
+
+
+
+
+//ADMIN
 	public function adminHome()
 	{
 		return View::make('layouts/admin/admin-home');
@@ -212,7 +217,12 @@ class HomeController extends BaseController {
 
 	public function adminArtistAccounts()
 	{
-		return View::make('layouts/admin/admin-artistaccounts');
+		$users = DB::table('tblUser')
+		->leftjoin('tblAccount', 'tblUser.intId', '=', 'tblAccount.intId')
+		->where('intUserType', '=', 2)
+		->get();
+
+		return View::make('layouts/admin/admin-artistaccounts')->with('users',$users);
 	}
 
 }

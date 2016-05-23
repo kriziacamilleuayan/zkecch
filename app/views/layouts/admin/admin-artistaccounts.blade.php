@@ -13,18 +13,28 @@ Artist Accounts
   <table class="table">
     <thead>
       <tr>
-        <th>Account</th>
+        <th>Account Email</th>
+        <th>Name</th>
+        <th>Pen Name</th>
         <th>Status</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
+        @foreach($users as $user)
       <tr>
-        <td>Account Name </td>
+        <td>{{$user->strUserEmail}}</td>
+        <td>{{$user->strName}}</td>
+        <td>{{$user->strPenName}}</td>
+        @if($user->intStatusId == 1)
         <td>Active</td>
         <td><button type="button" class="btn btn-info btn-sm animated fadeInUp delay-1s" data-toggle="modal" data-target="#status">Deactivate</button>
         </td>
+        @else
+        <td>Deactivated</td>
+        @endif
       </tr>
+      @endforeach
     </tbody>
   </table>
   </div>

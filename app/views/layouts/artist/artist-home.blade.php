@@ -32,7 +32,7 @@ Welcome
               @elseif($art->intCategory == 4)
               <div class=" Portfolio-box painting">
               @endif
-                	<a href="#"><img src="{{asset($art->strImagePath)}}" alt=""></a>	
+                	<a href="#"><img src="{{asset($art->strImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>	
                 	<h3>{{$art->strName}}</h3>
                   @if($art->intCategory == 1)
                     <p>Portrait</p>

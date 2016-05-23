@@ -235,7 +235,7 @@
               @elseif($art->intCategory == 4)
               <div class=" Portfolio-box painting">
               @endif
-                    <a href="#"><img src="{{asset($art->strImagePath)}}" alt=""></a>    
+                    <a href="#"><img src="{{asset($art->strImagePath)}}" alt="" style="height: 250px; width: 300px;"></a>    
                     <h3>{{$art->strName}}</h3>
                   @if($art->intCategory == 1)
                     <p>Portrait</p>
@@ -289,8 +289,8 @@
                 <p class="wow fadeInDown delay-09s">Honey does most of the work. She loves to write, not codes but actual literary pieces. She loves It Started With A Kiss, and Conrad. She wants to be a novelist someday.</p>
             </div>
         </div><br><br><br>
-        <div class="team-leader-block clearfix" style="height: inherit">
-            <div class="team-leader-box">
+        <div class="team-leader-block clearfix" >
+            <div class="team-leader-box" style="height: inherit">
                 <div class="team-leader wow fadeInDown delay-03s"> 
                     <div class="team-leader-shadow"><a href="#"></a></div>
                     <img src="img/team-leader-pic4.jpg" alt="">

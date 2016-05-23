@@ -64,25 +64,87 @@
         <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
     </div>
 </nav><!--main-nav-end-->
-<div class="container">
+
+
+<section class="main-section paddind" id="Portfolio"><!--main-section-start-->
+    <div class="container">
     <br><br>
     <h1>Browse all Artworks</h1>
     <br><br>
 
-    <div>
-    <div class="team-leader-box">
-        <div class="fadeInDown delay-09s"> 
-            <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="" alt="" style="width: 300px; height: 300px">
-        </div>
-        <h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target=""></button></h3>
-        <span class="fadeInDown delay-09s">PORTRAIT</span>
-        <span class="fadeInDown delay-09s">LANDSCAPE</span>
-        <span class="fadeInDown delay-09s">DIGITAL</span>
-        <span class="fadeInDown delay-09s">PAINTING</span>
-        <p class="fadeInDown delay-09s"></p>
+
+    <div class="portfolioContainer wow fadeInUp delay-04s">
+              <div class=" Portfolio-box portrait">
+              <div class=" Portfolio-box landscape">
+              <div class=" Portfolio-box digital">
+              <div class=" Portfolio-box painting">
+
+                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="" alt="" style="height: 250px; width: 300px;"></a>    
+                    <h3>Art Name</h3>
+              </div>
+              </div>    
     </div>
+    </div>
+              <div class=" Portfolio-box portrait">
+              <div class=" Portfolio-box landscape">
+              <div class=" Portfolio-box digital">
+              <div class=" Portfolio-box painting">
+
+                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="" alt="" style="height: 250px; width: 300px;"></a>    
+                    <h3>Art Name</h3>
+              </div>
+              </div>    
+    </div>
+    </div>
+              <div class=" Portfolio-box portrait">
+              <div class=" Portfolio-box landscape">
+              <div class=" Portfolio-box digital">
+              <div class=" Portfolio-box painting">
+
+                    <a href="#"  data-toggle="modal" data-target="#art-description"><img src="" alt="" style="height: 250px; width: 300px;"></a>    
+                    <h3>Art Name</h3>
+              </div>
+              </div>    
+    </div>
+    </div>
+
 </div>
+</section>
+
+ <!-- Modal -->
+ <div id="art-description" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+ 
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Art Name</h4>
+       </div>
+       <div class="modal-body">
+       <img src="img/portfolio-pic1.jpg">
+       <div class="text-left">
+           <p>Year: <b>1990</b></p>
+           <p>Artist: <b>Krizia</b></p>
+           <p>Category: <b>Digital</b></p>
+           <p>Description: <b>describe me. I'm pretty</b></p>
+           <p>Status: <b>Original Available</b></p>
+           <br>
+           <div style="display:flex">
+               <a type="button" class="btn btn-danger" href="{{URL::to('add-to-cart')}}">Add to cart</a>
+               <p style="margin-left: 10px"><b>Php 5000.00</b></p>
+           </div>
+       </div>
+         
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+
+   </div>
+ </div>
+
 
 </div>
 

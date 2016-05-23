@@ -17,9 +17,9 @@ Artworks
     <div class="team-leader-box">
         <div class="fadeInDown delay-09s"> 
             <div class="team-leader-shadow"><a href="#"></a></div>
-            <img src="{{ asset($art->strImagePath) }}" alt="" style="width: 300px; height: 300px">
+            <img src="{{ asset($art->strArtImagePath) }}" alt="" style="width: 300px; height: 300px">
         </div>
-       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#{{$art->intId}}">{{$art->strName}}</button></h3>
+       	<h3 class="fadeInDown delay-09s"><button type="button" class="btn-link" data-toggle="modal" data-target="#{{$art->intId}}">{{$art->strArtName}}</button></h3>
         @if($art->intCategory == 1)
         <span class="fadeInDown delay-09s">PORTRAIT</span>
         @elseif($art->intCategory == 2)
@@ -29,7 +29,7 @@ Artworks
         @elseif($art->intCategory == 4)
         <span class="fadeInDown delay-09s">PAINTING</span>
         @endif
-        <p class="fadeInDown delay-09s">{{$art->strDescription}}</p>
+        <p class="fadeInDown delay-09s">{{$art->strArtDescription}}</p>
     </div>
 @endforeach
 
@@ -44,10 +44,10 @@ Artworks
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">{{$art->strName}}</h4>
+        <h4 class="modal-title">{{$art->strArtName}}</h4>
       </div>
       <div class="modal-body">
-		<img src="{{ asset($art->strImagePath) }}">
+		<img src="{{ asset($art->strArtImagePath) }}">
 		<div class="text-left">
 			<p>Year: <b>{{$art->strYearCreated}}</b></p>
 			<p>Artist: <b>{{Session::get('name')}}</b></p>
@@ -60,12 +60,12 @@ Artworks
       @elseif($art->intCategory == 4)
       <p>Category: <b>PAINTING</b></p>
       @endif
-			<p>Description: <b>{{$art->strDescription}}</b></p>
-      @if($art->intStatusId == 1)
+			<p>Description: <b>{{$art->strArtDescription}}</b></p>
+      @if($art->intStatus == 1)
 			<p>Status: <b>Not Available</b></p>
-      @elseif($art->intStatusId == 2)
+      @elseif($art->intStatus == 2)
       <p>Status: <b>Original Available</b></p>
-      @elseif($art->intStatusId == 3)
+      @elseif($art->intStatus == 3)
       <p>Status: <b>Print Available</b></p>
       @endif
 			<br>

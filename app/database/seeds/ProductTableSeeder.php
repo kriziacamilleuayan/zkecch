@@ -9,11 +9,11 @@ class ProductTableSeeder extends Seeder {
 		->insert(
 			[
 				'intUserId'		=> 2,
-				'strName'	=> 'When Im with You',
-				'strDescription'		=> 'A Request from Client',
+				'strArtName'	=> 'When Im with You',
+				'strArtDescription'		=> 'A Request from Client',
 				'strYearCreated'	=> '2016',
-				'strImagePath'		=> 'img/macbook-pro.png',
-				'intStatusId'		=> 1,
+				'strArtImagePath'		=> 'img/macbook-pro.png',
+				'intStatus'		=> 1,
 				'intCategory'		=> 3,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
@@ -23,11 +23,11 @@ class ProductTableSeeder extends Seeder {
 		->insert(
 			[
 				'intUserId'		=> 2,
-				'strName'	=> 'Red Strings',
-				'strDescription'		=> 'Based on the Japanese Folklore of Red String of Fate',
+				'strArtName'	=> 'Red Strings',
+				'strArtDescription'		=> 'Based on the Japanese Folklore of Red String of Fate',
 				'strYearCreated'	=> '2016',
-				'strImagePath'		=> 'img/artwork1.jpg',
-				'intStatusId'		=> 2,
+				'strArtImagePath'		=> 'img/artwork1.jpg',
+				'intStatus'		=> 2,
 				'intCategory'		=> 2,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
@@ -37,11 +37,11 @@ class ProductTableSeeder extends Seeder {
 		->insert(
 			[
 				'intUserId'		=> 2,
-				'strName'	=> 'Subliminal Duality',
-				'strDescription'		=> 'What You See is Not Always There',
+				'strArtName'	=> 'Subliminal Duality',
+				'strArtDescription'		=> 'What You See is Not Always There',
 				'strYearCreated'	=> '2016',
-				'strImagePath'		=> 'img/artwork2.jpg',
-				'intStatusId'		=> 3,
+				'strArtImagePath'		=> 'img/artwork2.jpg',
+				'intStatus'		=> 3,
 				'intCategory'		=> 1,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
@@ -51,11 +51,11 @@ class ProductTableSeeder extends Seeder {
 		->insert(
 			[
 				'intUserId'		=> 2,
-				'strName'	=> 'Wolf in a Lamb Sheet',
-				'strDescription'		=> 'Be Careful',
+				'strArtName'	=> 'Wolf in a Lamb Sheet',
+				'strArtDescription'		=> 'Be Careful',
 				'strYearCreated'	=> '2016',
-				'strImagePath'		=> 'img/artwork3.jpg',
-				'intStatusId'		=> 2,
+				'strArtImagePath'		=> 'img/artwork3.jpg',
+				'intStatus'		=> 2,
 				'intCategory'		=> 1,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
@@ -65,11 +65,11 @@ class ProductTableSeeder extends Seeder {
 		->insert(
 			[
 				'intUserId'		=> 2,
-				'strName'	=> 'RED',
-				'strDescription'		=> 'Anime Sketch',
+				'strArtName'	=> 'RED',
+				'strArtDescription'		=> 'Anime Sketch',
 				'strYearCreated'	=> '2016',
-				'strImagePath'		=> 'img/artwork4.jpg',
-				'intStatusId'		=> 1,
+				'strArtImagePath'		=> 'img/artwork4.jpg',
+				'intStatus'		=> 1,
 				'intCategory'		=> 2,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
@@ -79,11 +79,11 @@ class ProductTableSeeder extends Seeder {
 		->insert(
 			[
 				'intUserId'		=> 2,
-				'strName'	=> 'Bored...',
-				'strDescription'		=> 'Just Passing Time',
+				'strArtName'	=> 'Bored...',
+				'strArtDescription'		=> 'Just Passing Time',
 				'strYearCreated'	=> '2016',
-				'strImagePath'		=> 'img/artwork5.jpg',
-				'intStatusId'		=> 2,
+				'strArtImagePath'		=> 'img/artwork5.jpg',
+				'intStatus'		=> 2,
 				'intCategory'		=> 4,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]

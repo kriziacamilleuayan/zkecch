@@ -156,7 +156,34 @@ class HomeController extends BaseController {
 
 	public function artistAccount()
 	{
-		return View::make('layouts/artist/artist-account');
+		$id = DB::table('tblAccount')
+		->distinct()
+		->where('intId', '=', Session::get('id'))
+		->first();
+
+		return View::make('layouts/artist/artist-account')->with('id',$id);
+	}
+
+	public function submitCredentials()
+	{
+		$id = DB::table('tblAccount')
+		->distinct()
+		->where('intId', '=', Session::get('id'))
+		->first();
+
+		if(Request::input('confirmpassword') == $id->strUserPassword)
+		{
+			DB::table('tblAccount')
+ 			->where('intId', Session::get('id'))
+ 			->update([
+ 				'strUserEmail' => trim(Request::input('email')),
+ 				'strUserPassword' => trim(Request::input('password')),
+ 				'updated_at' => date('Y-m-d H:i:s')
+ 			]);
+
+		}
+
+		return Redirect::to('/artist-account');
 	}
 
 	public function artistArtworks()
@@ -177,11 +204,11 @@ class HomeController extends BaseController {
 		 ->insert(
 		 	[
 		 		'intUserId'		=> Session::get('id'),
-		 		'strName'	=> Request::input('name'),
-		 		'strDescription'		=> Request::input('description'),
+		 		'strArtName'	=> Request::input('name'),
+		 		'strArtDescription'		=> Request::input('description'),
 		 		'strYearCreated'	=> Request::input('date'),
-		 		'strImagePath'		=> '/img/' . trim(Request::input('name')),
-		 		'intStatusId'		=> Request::input('status'),
+		 		'strArtImagePath'		=> '/img/' . trim(Request::input('name')),
+		 		'intStatus'		=> Request::input('status'),
 		 		'intCategory'		=> Request::input('category'),
 		 		'created_at'		=> date('Y-m-d H:i:s')
 		 	]
@@ -233,13 +260,24 @@ class HomeController extends BaseController {
 
 	public function adminArtworks()
 	{
-		return View::make('layouts/admin/admin-artworks');
+		$arts = DB::table('tblProduct')
+		->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
+		->orderBy('tblProduct.created_at', 'desc')
+		->get();
+
+
+		return View::make('layouts/admin/admin-artworks')->with('arts',$arts);
 	}
 
 
 	public function adminProfile()
 	{
-		return View::make('layouts/admin/admin-profile');
+		$user = DB::table('tblUser')
+		->leftjoin('tblAccount', 'tblAccount.intId', '=', 'tblUser.intId')
+		->where('tblUser.intId', '=', Session::get('id'))
+		->first();
+
+		return View::make('layouts/admin/admin-profile')->with('user',$user);
 	}
 
 }

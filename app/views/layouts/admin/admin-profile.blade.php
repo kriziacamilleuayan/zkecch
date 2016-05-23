@@ -1,4 +1,4 @@
-@extends('layouts.artist.master')
+@extends('layouts.admin.master')
 
 @section('title')
 Profile

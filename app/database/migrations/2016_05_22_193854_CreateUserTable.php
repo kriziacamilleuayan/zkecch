@@ -16,7 +16,7 @@ class CreateUserTable extends Migration {
 			$table->engine = 'InnoDB';
 			$table->increments('intId');
 			$table->integer('intUserType');
-			$table->string('strUserName', 100);
+			$table->string('strName', 100);
 			$table->string('strPenName', 50);
 			$table->string('strDescription', 250);
 			$table->string('strWebsite', 50);

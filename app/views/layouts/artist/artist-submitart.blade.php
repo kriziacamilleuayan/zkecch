@@ -30,18 +30,18 @@ Submit Art
     <div class="form-group col-sm-8">
       <label for="sel2">Category:</label>
       <select class="form-control" name="category" id="sel2">
-        <option>Portrait</option>
-        <option>Landscape</option>
-        <option>Painting</option>
-        <option>Digital</option>
+        <option value="1">Portrait</option>
+        <option value="2">Landscape</option>
+        <option value="4">Painting</option>
+        <option value="3">Digital</option>
       </select>
     </div>
     <div class="form-group col-sm-8">
       <label for="sel1">Availability:</label>
       <select class="form-control" name='status' id="sel1">
-        <option>Not for Sale</option>
-        <option>Original for Sale</option>
-        <option>Print for Sale</option>
+        <option value="1">Not for Sale</option>
+        <option value="2">Original for Sale</option>
+        <option value="3">Print for Sale</option>
       </select>
       <br>
     </div>

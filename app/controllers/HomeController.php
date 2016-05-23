@@ -19,7 +19,7 @@ class HomeController extends BaseController {
 	{
 		$arts = DB::table('tblProduct')
 		//->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
-		->orderBy('created_at', 'asc')
+		->orderBy('created_at', 'desc')
 		->take(6)
 		->get();
 
@@ -68,8 +68,8 @@ class HomeController extends BaseController {
 		->insert(
 			[
 				'intUserType'		=> 2,
-				'strName'	=> Request::input('form-firstname'),
-				'strPenName'	=>  Request::input('form-lastname'),
+				'strName'			=> Request::input('form-firstname'),
+				'strPenName'		=>  Request::input('form-lastname'),
 				'intStatusId'		=> 1,
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
@@ -91,7 +91,7 @@ class HomeController extends BaseController {
 	{
 		$arts = DB::table('tblProduct')
 		->where('intUserId', '=', Session::get('id'))
-		->orderBy('created_at', 'asc')
+		->orderBy('created_at', 'desc')
 		->take(6)
 		->get();
 
@@ -170,19 +170,23 @@ class HomeController extends BaseController {
 
 	public function submitArtworks()
 	{
-		// DB::table('tblProduct')
-		// ->insert(
-		// 	[
-		// 		'intUserId'		=> Session::get('id'),
-		// 		'strName'	=> Request::input('name'),
-		// 		'strDescription'		=> Request::input('description'),
-		// 		'strYearCreated'	=> Request::input('date'),
-		// 		'strImagePath'		=> 'img/macbook-pro.png',
-		// 		'intStatusId'		=> 1,
-		// 		'intCategory'		=> 3,
-		// 		'created_at'		=> date('Y-m-d H:i:s')
-		// 	]
-		// );
+		Input::file('user_image_input')->move(public_path() . '/img/',
+ 						trim(Request::input('name')));
+
+		 DB::table('tblProduct')
+		 ->insert(
+		 	[
+		 		'intUserId'		=> Session::get('id'),
+		 		'strName'	=> Request::input('name'),
+		 		'strDescription'		=> Request::input('description'),
+		 		'strYearCreated'	=> Request::input('date'),
+		 		'strImagePath'		=> '/img/' . trim(Request::input('name')),
+		 		'intStatusId'		=> Request::input('status'),
+		 		'intCategory'		=> Request::input('category'),
+		 		'created_at'		=> date('Y-m-d H:i:s')
+		 	]
+		 );
+
 		return Redirect::to('/artist-artworks');
 	}
 

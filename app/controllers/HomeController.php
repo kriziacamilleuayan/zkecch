@@ -212,7 +212,13 @@ class HomeController extends BaseController {
 //ADMIN
 	public function adminHome()
 	{
-		return View::make('layouts/admin/admin-home');
+		$arts = DB::table('tblProduct')
+		//->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
+		->orderBy('created_at', 'desc')
+		->take(6)
+		->get();
+
+		return View::make('layouts/admin/admin-home')->with('arts',$arts);
 	}
 
 	public function adminArtistAccounts()

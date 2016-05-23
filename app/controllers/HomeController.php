@@ -300,6 +300,11 @@ class HomeController extends BaseController {
 		return View::make('layouts/admin/admin-transaction');
 	}
 
+		public function checkout()
+	{
+		return View::make('layouts/checkout');
+	}
+
 
 }
 

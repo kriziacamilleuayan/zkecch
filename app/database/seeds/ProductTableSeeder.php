@@ -15,6 +15,7 @@ class ProductTableSeeder extends Seeder {
 				'strArtImagePath'		=> 'img/macbook-pro.png',
 				'intStatus'		=> 1,
 				'intCategory'		=> 3,
+				'strPrice'			=> 'P300.00',
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);
@@ -29,6 +30,7 @@ class ProductTableSeeder extends Seeder {
 				'strArtImagePath'		=> 'img/artwork1.jpg',
 				'intStatus'		=> 2,
 				'intCategory'		=> 2,
+				'strPrice'			=> 'P200.00',
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);
@@ -43,6 +45,7 @@ class ProductTableSeeder extends Seeder {
 				'strArtImagePath'		=> 'img/artwork2.jpg',
 				'intStatus'		=> 3,
 				'intCategory'		=> 1,
+				'strPrice'			=> 'P100.00',
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);
@@ -57,6 +60,7 @@ class ProductTableSeeder extends Seeder {
 				'strArtImagePath'		=> 'img/artwork3.jpg',
 				'intStatus'		=> 2,
 				'intCategory'		=> 1,
+				'strPrice'			=> 'P400.00',
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);
@@ -71,6 +75,7 @@ class ProductTableSeeder extends Seeder {
 				'strArtImagePath'		=> 'img/artwork4.jpg',
 				'intStatus'		=> 1,
 				'intCategory'		=> 2,
+				'strPrice'			=> 'P500.00',
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);
@@ -85,6 +90,7 @@ class ProductTableSeeder extends Seeder {
 				'strArtImagePath'		=> 'img/artwork5.jpg',
 				'intStatus'		=> 2,
 				'intCategory'		=> 4,
+				'strPrice'			=> 'P700.00',
 				'created_at'		=> date('Y-m-d H:i:s')
 			]
 		);

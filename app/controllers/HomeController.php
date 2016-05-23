@@ -18,8 +18,8 @@ class HomeController extends BaseController {
 	public function showWelcome()
 	{
 		$arts = DB::table('tblProduct')
-		//->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
-		->orderBy('created_at', 'desc')
+		->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
+		->orderBy('tblProduct.created_at', 'desc')
 		->take(6)
 		->get();
 
@@ -60,6 +60,21 @@ class HomeController extends BaseController {
 	{
 		Session::flush();
 		return Redirect::to('/');
+	}
+
+	public function browseArtworks()
+	{
+		$arts = DB::table('tblProduct')
+		->leftjoin('tblUser', 'tblUser.intId', '=', 'tblProduct.intUserId')
+		->orderBy('tblProduct.created_at', 'desc')
+		->get();
+
+		return View::make('layouts/browse-artworks')->with('arts',$arts);
+	}
+
+	public function addToCart()
+	{
+		return View::make('layouts/add-to-cart');
 	}
 
 	public function signUp()
@@ -280,15 +295,7 @@ class HomeController extends BaseController {
 		return View::make('layouts/admin/admin-profile')->with('user',$user);
 	}
 
-	public function browseArtworks()
-	{
-		return View::make('layouts/browse-artworks');
-	}
 
-	public function addToCart()
-	{
-		return View::make('layouts/add-to-cart');
-	}
 
 }
 

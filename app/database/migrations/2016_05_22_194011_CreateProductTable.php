@@ -14,7 +14,7 @@ class CreateProductTable extends Migration {
 	{
 		Schema::create('tblProduct', function($table) {
 			$table->engine = 'InnoDB';
-			$table->increments('intId');
+			$table->increments('intArtId');
 			$table->integer('intUserId');
 			$table->string('strArtName', 100);
 			$table->string('strArtDescription', 250);
@@ -23,6 +23,7 @@ class CreateProductTable extends Migration {
 			$table->timestamps();
 			$table->integer('intCategory');
 			$table->integer('intStatus');
+			$table->string('strPrice', 100);
 		});	
 	}
 

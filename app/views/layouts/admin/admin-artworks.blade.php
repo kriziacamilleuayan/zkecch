@@ -69,6 +69,8 @@ Artworks
       @elseif($art->intStatusId == 3)
       <p>Status: <b>Print Available</b></p>
       @endif
+
+      <button type="button" class="btn btn-info btn-sm animated fadeInUp delay-1s" data-toggle="modal" data-target="#contact">Contact Artist</button>
 			<br>
 			<!-- <div style="display:flex">
 				<a type="button" class="btn btn-danger" href="{{URL::to('artist-addtocart')}}">Add to cart</a>
@@ -78,6 +80,39 @@ Artworks
         
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Modal -->
+@foreach($arts as $art)
+<div id="{{$art->intId}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Contact Artist</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="col-lg-6 col-sm-5">
+            	<div class="form">
+                	<input class="input-text" type="text" name="" value="Admin" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                    <input class="input-text" type="text" name="" value="Artist Email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                	<textarea class="input-text text-area" cols="0" rows="0" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+                    <input class="input-btn" type="submit" value="send message">
+                </div>	
+            </div>
+		</div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

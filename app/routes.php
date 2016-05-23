@@ -25,6 +25,7 @@ Route::group(['before' => 'login'], function() {
 	Route::get('/artist-edit-profile', 'HomeController@artistEditProfile');
 	Route::post('/artist-save-edit-profile', 'HomeController@saveProfile');
 	Route::get('/artist-account', 'HomeController@artistAccount');
+	Route::post('/artist-account','HomeController@submitCredentials');
 	Route::get('/artist-artworks', 'HomeController@artistArtworks');
 	Route::post('/artist-artworks','HomeController@submitArtworks');
 	Route::get('/artist-addtocart', 'HomeController@artistAddToCart');

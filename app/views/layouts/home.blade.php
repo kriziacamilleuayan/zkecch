@@ -135,14 +135,14 @@
                                 </div>
                             </div>
                             <div class="form-bottom">
-                                <form role="form" action="{{URL::to('login')}}" method="post" class="login-form">
+                                <form role="form" action="{{URL::to('sign-up')}}" method="post" class="login-form">
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-firstname">First Name</label>
-                                        <input type="text" name="form-firstname" placeholder="First Name..." class="form-username form-control" id="form-username">
+                                        <label class="sr-only" for="form-firstname">Name</label>
+                                        <input type="text" name="form-firstname" placeholder="Name..." class="form-username form-control" id="form-username">
                                     </div>
                                     <div class="form-group">
-                                        <label class="sr-only" for="form-lastname">Last Name</label>
-                                        <input type="text" name="form-lastname" placeholder="Last Name..." class="form-username form-control" id="form-username">
+                                        <label class="sr-only" for="form-lastname">Pen Name</label>
+                                        <input type="text" name="form-lastname" placeholder="Pen Name..." class="form-username form-control" id="form-username">
                                     </div>
                                     <div class="form-group">
                                         <label class="sr-only" for="form-username">Email</label>

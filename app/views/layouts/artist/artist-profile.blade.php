@@ -8,7 +8,7 @@ Profile
 <br><br>
 <h1>Profile</h1>
 <br><br>
-@if($user->strName == NULL)
+@if($user->strImagePath == NULL)
 <img src="img/signup.png" alt="profile Picture" style="width: 200px; height: 200px;">
 @else
 <img src="{{ asset($user->strImagePath) }}" alt="profile Picture" style="width: 200px; height: 200px;">

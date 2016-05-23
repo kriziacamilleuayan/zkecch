@@ -52,10 +52,10 @@
             </div>
     <div class="container">
         <ul class="main-nav">
-        	<li><a href="#header">{{ Session::get('name') }}(Admin)</a></li>
+        	<li><a href="{{URL::to('admin-profile')}}">{{ Session::get('name') }}(Admin)</a></li>
             <li><a href="{{URL::to('admin-artistaccounts')}}">Artist Accounts</a></li>
-            <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
-            <li><a href="#team">Artworks</a></li>
+            <li class="small-logo"><a href="{{URL::to('admin-home')}}"><img src="img/small-logo.png" alt=""></a></li>
+            <li><a href="{{URL::to('admin-artworks')}}">Artworks</a></li>
             <li><a href="{{URL::to('logout')}}">Logout</a></li>
         </ul>
         <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>

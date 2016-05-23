@@ -236,4 +236,11 @@ class HomeController extends BaseController {
 		return View::make('layouts/admin/admin-artworks');
 	}
 
+
+	public function adminProfile()
+	{
+		return View::make('layouts/admin/admin-profile');
+	}
+
 }
+

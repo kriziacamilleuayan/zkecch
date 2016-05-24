@@ -40,22 +40,12 @@
 <body>
 
 <nav class="main-nav-outer" id="test" style="background-color: rgb(212, 192, 180)"><!--main-nav-start-->
-	        <div id="custom-search-input" class="col-sm-2 pull-right" style="margin-top: 35px">
-                <div class="input-group">
-                    <input type="text" class="form-control input-sm" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-sm" type="button" style="background-color: pink">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
     <div class="container">
         <ul class="main-nav">
-        	<li><a href="{{URL::to('admin-profile')}}">{{ Session::get('name') }}(Admin)</a></li>
+        	<li><a href="{{URL::to('admin-profile')}}">Admin</a></li>
             <li><a href="{{URL::to('admin-artistaccounts')}}">Artist Accounts</a></li>
-            <li class="small-logo"><a href="{{URL::to('admin-home')}}"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="{{URL::to('admin-artworks')}}">Artworks</a></li>
+            <li class="small-logo"><a href="{{URL::to('admin-home')}}"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="{{URL::to('admin-transaction')}}">Transaction</a></li>
             <li><a href="{{URL::to('logout')}}">Logout</a></li>
         </ul>

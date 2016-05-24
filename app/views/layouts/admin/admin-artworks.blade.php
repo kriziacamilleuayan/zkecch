@@ -25,6 +25,8 @@ Artworks All
         <td>{{$art->strArtName}}</td>
         <td>{{$art->strPenName}}</td>
         <td>{{$art->strYearCreated}}</td>
+        <td><button type="button" class="btn btn-info btn-sm animated fadeInUp delay-1s" data-toggle="modal" data-target="#contact">Contact Artist</button>
+    </td>
       </tr>
       @endforeach
     </tbody>
@@ -33,28 +35,32 @@ Artworks All
   <br>
 </div>
 <br><br><br><br><br>
-
 <!-- Modal -->
-<div id="status" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Deactivate Account</h4>
-      </div>
-      <div class="modal-body">
-        <br>
-          <h4>Are you sure you want to deactivate this account?</h4>
-        <br>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Deactivate</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-
-  </div>
+ <div id="contact" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+ 
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Contact Artist</h4>
+       </div>
+       <div class="modal-body">
+         <div class="col-lg-6 col-sm-5">
+               <div class="form">
+                   <input class="input-text" type="text" name="" value="Title" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                     <input class="input-text" type="text" name="" value="Artist Email" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                   <textarea class="input-text text-area" cols="0" rows="0" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+                    
+                 </div>  
+             </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Send Message</button>
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       </div>
+     </div>
+ 
+   </div>
+ </div>
 </div>
-
 @endsection

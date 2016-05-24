@@ -91,7 +91,7 @@
               @elseif($art->intCategory == 4)
               <div class=" Portfolio-box painting">
               @endif
-                  <button data-toggle="modal" data-target="#{{$art->intArtId}}"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></button>  
+                  <button data-toggle="modal" data-target="#{{$art->intArtId}}" style=" border: none; background-color: white"><img src="{{asset($art->strArtImagePath)}}" alt="" style="height: 250px; width: 300px;"></button>  
                   <h3>{{$art->strArtName}}</h3>
                   @if($art->intCategory == 1)
                     <p>Portrait</p>
@@ -120,7 +120,7 @@
          <h4 class="modal-title">{{$art->strArtName}}</h4>
        </div>
        <div class="modal-body">
-       <img src="{{asset($art->strArtImagePath)}}">
+       <img src="{{asset($art->strArtImagePath)}} ">
        <div class="text-left">
         <input type="text" name="id" value="{{$art->intArtId}}" style="border-color: white; line-height: 1px; border:0" readonly>
 

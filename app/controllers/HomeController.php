@@ -74,8 +74,14 @@ class HomeController extends BaseController {
 
 	public function addToCart()
 	{
-		dd(Request::input('image'));
-		return View::make('layouts/add-to-cart');
+		$id = Request::input('id');
+		Session::put('order',$id);
+
+		$art = DB::table('tblProduct')
+		->where('intArtId','=',$id)
+		->first();
+
+		return View::make('layouts/add-to-cart')->with('art',$art);
 	}
 
 	public function signUp()
@@ -246,7 +252,13 @@ class HomeController extends BaseController {
 
 	public function artistOrders()
 	{
-		return View::make('layouts/artist/artist-orders');
+		$order = DB::table('tblOrder')
+		->leftjoin('tblProduct', 'tblOrder.intProdId', '=', 'tblProduct.intArtId')
+		->where('intUserId', '=', Session::get('id'))
+		->orderBy('tblOrder.created_at', 'desc')
+		->get();
+
+		return View::make('layouts/artist/artist-orders')->with('order',$order);
 	}
 
 
@@ -299,7 +311,12 @@ class HomeController extends BaseController {
 
 	public function adminTransaction()
 	{
-		return View::make('layouts/admin/admin-transaction');
+		$order = DB::table('tblOrder')
+		->leftjoin('tblProduct', 'tblOrder.intProdId', '=', 'tblProduct.intArtId')
+		->orderBy('tblOrder.created_at', 'desc')
+		->get();
+
+		return View::make('layouts/admin/admin-transaction')->with('order',$order);
 	}
 
 		public function checkout()
@@ -307,17 +324,19 @@ class HomeController extends BaseController {
 		DB::table('tblOrder')
 		->insert(
 			[
-				'strName'		=> Request::input('price'),
-				'strUserEmail'	=> Request::input('price'),
-				'strContactNumber'	=> Request::input('price'),
-				'strAddress'	=> Request::input('price'),
-				'intDeliveryMode'	=> Request::input('price'),
-				'intStatusId'	=> Request::input('price'),
+
+				'intProdId'		=>	Session::get('order'),
+				'strName'		=> Request::input('name'),
+				'strUserEmail'	=> Request::input('email'),
+				'strContactNumber'	=> Request::input('number'),
+				'strAddress'	=> Request::input('address'),
+				'intDeliveryMode'	=> Request::input('deliverymode'),
+				'intStatusId'	=> 1,
 				'created_at'	=> date('Y-m-d H:i:s')
 			]
 		);
 
-
+		Session::forget('order');
 		return View::make('layouts/checkout');
 	}
 

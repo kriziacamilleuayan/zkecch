@@ -68,7 +68,7 @@
 <br><br>
 <h1>Order Form</h1>
 <br><br>
-
+<form role="form" class="order-form" action="{{URL::to('checkout')}}" method="post">
 <div class="container">
 <div class="table-responsive text-left">          
   <table class="table">
@@ -81,65 +81,65 @@
     </thead>
     <tbody>
       <tr>
-        <td>Item Name</td>
-        <td>Item Description</td>
-        <td>5000.00</td>
+        <td>{{$art->strArtName}}</td>
+        <td>{{$art->strArtDescription}}</td>
+        <td>{{$art->strPrice}}</td>
       </tr>
     </tbody>
   </table>
   </div>
   <br>
-  <p class="text-right">Sub-Total: <b>Php 5000.00</b></p>
+  <p class="text-right">Sub-Total: <b>{{$art->strPrice}}</b></p>
   
   <div class="text-left">
   <p><b>Shipping fee*</b></p>
     <div class="radio">
-        <label><input type="radio" name="shippingfee">Php 100.00 - NCR</label>
+        <label><input type="radio" name="shippingfee" value="1">Php 100.00 - NCR</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="shippingfee">Php 150.00 - Province</label>
+        <label><input type="radio" name="shippingfee" value="2">Php 150.00 - Province</label>
     </div>
   </div>
   <br>
-  <p class="text-right">_________________________________________</p>
-  <p class="text-right">Total: <b>Php 5100.00</b></p>
+  <!-- <p class="text-right">_________________________________________</p>
+  <p class="text-right">Total: <b>Php 5100.00</b></p> -->
   <br><br>
 
 <div class="form-group col-sm-6 text-left">
   <label for="usr">Full Name*:</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" name="name" class="form-control" id="usr">
 </div>
 <div class="col-sm-4"></div>
 <div class="form-group col-sm-6 text-left">
   <label for="usr">Contact Number*:</label>
-  <input type="nummber" class="form-control" id="usr">
+  <input type="nummber" name="number" class="form-control" id="usr">
 </div>
 <div class="form-group col-sm-6 text-left">
   <label for="usr">Email*:</label>
-  <input type="email" class="form-control" id="usr">
+  <input type="email" name="email" class="form-control" id="usr">
 </div>
 <div class="form-group col-sm-6 text-left">
   <label for="usr">Address*:</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" name="address" class="form-control" id="usr">
 </div>
   <div class="text-left col-sm-6 form-group">
     <br>
   <p><b>Delivery Mode*</b></p>
     <div class="radio">
-        <label><input type="radio" name="deliverymode">Meet-up</label>
+        <label><input type="radio" name="deliverymode" value="1">Meet-up</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="deliverymode">Shipping</label>
+        <label><input type="radio" name="deliverymode" value="2">Shipping</label>
     </div>
   </div>
 <br><br>
 <label class="checkbox-inline"><input type="checkbox" value="">'I have read and agree to the Terms and Conditions'*</label>
   <br><br>
-<button type="button" class="btn btn-info btn-lg link animated fadeInUp delay-1s" style="margin-left:40px">Proceed to Checkout</button>
+<button type="submit" class="btn btn-info btn-lg link animated fadeInUp delay-1s" style="margin-left:40px">Proceed to Checkout</button>
   <br><br><br><br>
 
 </div>
-
+</form>
 </div>
 
 

@@ -13,22 +13,30 @@ Orders
   <table class="table">
     <thead>
       <tr>
-        <th>Order no.</th>
-        <th>Date of Order</th>
-        <th>Items</th>
+        <th>Ordered Item</th>
+        <th>Client Name</th>
+        <th>Address</th>
         <th>Status</th>
       </tr>
     </thead>
     <tbody>
+    @foreach($order as $order)
       <tr>
-        <td>01</td>
-        <td>November 01, 1988</td>
-        <td>wew</td>
-        <td>unpaid</td>
+        <td>{{$order->strArtName}}</td>
+        <td>{{$order->strName}}</td>
+        <td>{{$order->strAddress}}</td>
+         @if($order->intStatusId == 1)
+        <td>Pending</td>
+        @elseif($order->intStatusId == 2)
+        <td>Accepted</td>
+        @elseif($order->intStatusId == 2)
+        <td>Rejected</td>
+        @endif
         <td><button type="button" class="btn btn-info btn-sm animated fadeInUp delay-1s" data-toggle="modal" data-target="#status">Change Status</button>
 			<button type="button" class="btn btn-info btn-sm animated fadeInUp delay-1s" data-toggle="modal" data-target="#viewdetails">View Details</button>
         </td>
       </tr>
+      @endforeach
     </tbody>
   </table>
   </div>

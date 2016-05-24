@@ -13,18 +13,26 @@ Transaction
   <table class="table">
     <thead>
       <tr>
-        <th>lol</th>
-        <th>lol</th>
-        <th>lol</th>
+        <th>Ordered Item</th>
+        <th>Client</th>
+        <th>Status</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
+    @foreach($order as $order)
       <tr>
-        <td>lol</td>
-        <td>lol</td>
-        <td>lol</td>
+        <td>{{$order->strArtName}}</td>
+        <td>{{$order->strName}}</td>
+        @if($order->intStatusId == 1)
+        <td>Pending</td>
+        @elseif($order->intStatusId == 2)
+        <td>Accepted</td>
+        @elseif($order->intStatusId == 2)
+        <td>Rejected</td>
+        @endif
       </tr>
+    @endforeach
     </tbody>
   </table>
   </div>
